@@ -1,38 +1,215 @@
 <template>
-  <div class="about-text col-md-3">
-    <h3 style="font-size: 20px; font-weight: bold;">
-      Samedi 12 octobre de 11h à 12h
-    </h3>
-
-    <img :alt="keynote.Title" :src="thumbUrl(keynote)" style="width: 100%;" :title="keynote.Title" />
-
-    <h3>{{ keynote.Title }}</h3>
-
-    <div class="lead">
-      <p style="font-size: 18px;">{{ keynote.description }}</p>
+  <div v-if="keynote.visible" class="about-text col-md-4 col-sm-6">
+<!-- *** French version **--------------------* -->
+    <!-- <div v-if="english == false"> -->
+    <!-- Show the image of the event -->
+    <div style="position: relative">
+      <img :alt="keynote.title" :src="thumbUrl(keynote)" :title="keynote.title" width="100%"/>
+      <!-- Verify if the keynote is in english or in german, if yes, show the flag correspond -->
+      <div class="flag">
+        <div v-if="keynote.keynoteInEnglish" class="small" style="color: white"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/gb.svg" width="14px" style="padding-bottom: 3px"> En Anglais</div>
+        <div v-if="keynote.keynoteInGerman" class="small" style="color: white"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/de.svg" width="14px" style="padding-bottom: 3px"> En Allemand</div>
+      </div>
+      <!-- Show the date & the hours of the event -->
+      <div class="date">
+        {{ keynote.startTime | frStartTimeFormat1 | capitalize }}<br/>
+        <span style="float: right">{{ keynote.endTime | frStartTimeFormat2 }}</span> 
+      </div>
+<!-- --------------------------------------------------------------------------------- -->
+      <!-- Showing the description in new widow at the same position -->
+      <!-- <transition name="fade">
+        <div v-if="show" class="description">
+          <div class="text-left title">
+            <h4 style="color: #222222; line-height: 1.3em">{{ keynote.title }}<br><span><em class="small">{{ keynote.speaker }}</em></span></h4>
+          </div>
+          <div style="padding: 5px">{{ keynote.description }}</div>
+          <button @click="show = !show" class="btn btn-danger buttonClose">X</button>
+        </div>
+      </transition> -->
+<!-- --------------------------------------------------------------------------------- -->
     </div>
-    <a>
-      Keynote en Anglais
-    </a>
-    <br />
-    <div style="margin-bottom: 50px; margin-top: 20px;">
-      <a class="btn btn-primary" href="https://www.eventbrite.fr/e/billets-conference-hic2-relations-interculturelles-74418027323" target="_blank">J'y vais !</a>
+    <!-- The title & the speaker name -->
+    <div class="text-left title">
+      <h4 style="line-height: 1.3em">{{ keynote.title }}<br><span><em class="small">{{ keynote.speaker }}</em></span></h4>
     </div>
+    <!-- Button of the description, when clicked, showing the event in modal -->
+    <!-- <button @click="show = !show" class="btn btn-primary buttonSize">Description</button> -->
+    <button type="button" class="btn btn-primary buttonSize" data-toggle="modal" :data-target="'#' + keynote.id">Description</button>
+    <!-- Button of the link to the event site -->
+    <div style="margin: 10px; margin-bottom: 20px">
+      <a class="btn btn-primary buttonSize" :href="keynote.ticketsUrl" target="_blank">J'y vais !</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" :id="keynote.id" tabindex="-1" role="dialog" aria-labelledby="keynoteModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- The header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLongTitle" style="color: #222222">{{ keynote.title }}</h4>
+            <button class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -22px; color: red">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- The body -->
+          <div class="modal-body" style="color: #222222">
+            <div>
+              <img :alt="keynote.title" :src="thumbUrl(keynote)" :title="keynote.title" width="100%"/>
+            </div>
+            <!-- The names of the speaker -->
+            <div style="text-align: left; padding: 5px">
+              <em class="small">Interlocuteur : {{ keynote.speaker }}</em>
+            </div>
+            <!-- Show the date & the hours of the event -->
+            <div style="color: #222222; text-align: left; font-weight: bold; padding-left: 5px">
+              Date : {{ keynote.startTime | frStartTimeFormat | capitalize }} {{ keynote.endTime | endTimeFormat }}
+            </div>
+            <div class="description">
+              {{ keynote.description }}
+            </div>
+            <!-- Verify if the keynote is in english or in german, if yes, show the flag correspond -->
+            <div style="color: #222222; text-align: left; font-weight: bold; padding-left: 5px">
+              <div v-if="keynote.keynoteInEnglish">Keynote : <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/gb.svg" width="14px" style="padding-bottom: 3px"> En Anglais</div>
+              <div v-if="keynote.keynoteInGerman">Keynote : <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/de.svg" width="14px" style="padding-bottom: 3px"> En Allemand</div>
+            </div>
+            <div>
+              <a class="btn btn-primary buttonSize" :href="keynote.ticketsUrl" target="_blank">J'y vais !</a>
+            </div>
+          </div>
+          <!-- The footer -->
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-danger buttonSize" data-dismiss="modal">X</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <hr style="margin-bottom: 20px">
+    <!-- </div> -->
+<!-- *** English version **--------------------* -->
+    <!-- <div v-else-if="english"> -->
+      <!-- Show the date, the start & end times & the duration in minutes of the event -->
+      <!-- <h3 style="font-size: 20px; font-weight: bold;">
+        {{ keynote.startTime | enStartTimeFormat | capitalize }} {{ keynote.endTime | endTimeFormat }}
+        ({{ timeDiffrence(keynote.startTime, keynote.endTime) }} minutes)
+      </h3>  -->
+      <!-- Show the image of the event -->
+      <!-- <img :alt="keynote.en_title" :src="thumbUrl(keynote)" style="width: 100%;" :title="keynote.en_title" /> -->
+      <!-- The title -->
+      <!-- <h3>{{ keynote.en_title }}</h3> -->
+      <!-- The description -->
+      <!-- <div class="lead text-left">
+        <p style="font-size: 18px;">{{ keynote.en_description }}</p>
+      </div> -->
+      <!-- The button for showing the content of the event in french with fr flag -->
+      <!-- <a class="btn btn-primary" @click="english = false"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/fr.svg" width="12px" alt=""> fr</a> -->
+      <!-- Button & link to directing to the principle page of the event -->
+      <!-- <a class="btn btn-primary" style="margin: 20px" :href="keynote.ticketsUrl" target="_blank">I'm going!</a> -->
+
+    <!-- </div> -->
   </div>
+   
 </template>
 
 <script>
+// import moment from "moment";
+
 export default {
   name: "Keynote",
+  data: function () {
+    return {
+      // english: false,
+      // show: false
+    }
+  },
   props: {
     keynote: Object
   },
   methods: {
-    thumbUrl: function (kn) {
-      if (kn.thumbnail != null) {
-        return "http://localhost:1337" + kn.thumbnail.url;
+    thumbUrl: function (keynote) {
+      if (keynote.thumbnail != null) {
+        return "http://192.168.0.24:1337" + keynote.thumbnail[0].url;
       }
-    }
+    },
+    // timeDiffrence: function(startTime, endTime) {
+
+    //   let startHours = parseInt(moment(startTime).format("H"), 10);
+    //   let startMinutes = parseInt(moment(startTime).format("m"), 10);
+    //   let startTotalMin = startHours * 60 + startMinutes;
+
+    //   let endHours = parseInt(moment(endTime).format("H"), 10);
+    //   let endMinutes = parseInt(moment(endTime).format("m"), 10);
+    //   let endTotalMin = endHours * 60 + endMinutes;
+
+    //   return endTotalMin - startTotalMin;
+    // },
+    // mouseOver: function(){
+    //   this.active = !this.active;   
+    // }
   }
 };
+
 </script>
+
+
+<style>
+  .flag {
+    position: absolute; 
+    top: 0%; 
+    right: 0%;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: rgba(80, 83, 90, 0.808);
+  }
+  .date {
+    position: absolute; 
+    bottom: -16px; 
+    right: 0px;
+    color: #222222;
+    background-color: #F7A611;
+    line-height: 1.2;
+    font-size: 0.8em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: bold;
+  }
+  .title {
+    margin-top: 20px; 
+    height: 5em; 
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* .description {
+    position: absolute;
+    background-color: lightgrey;
+    color: #222222;
+    height: auto;
+    z-index: 1;
+    width: 100%;
+  } */
+  .description {
+    padding: 10px 5px 10px 5px; 
+    text-align: justify;
+  }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to  {
+    opacity: 0;
+  }
+  .buttonSize {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .buttonClose {
+    margin-bottom: 10px; 
+    float: right; 
+    margin-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+</style>
