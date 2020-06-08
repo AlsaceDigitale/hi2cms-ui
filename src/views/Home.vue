@@ -260,6 +260,7 @@
       </div>
     </section>
 
+    <!-- ____----____----____----____----____----____----____----____----____ modification 05/06/2020 -->
     <!-- KEYNOTES -->
     <section class="section section-dark" id="keynotes">
       <div class="section-background">
@@ -270,11 +271,26 @@
       <div class="container">
         <h2 class="section-heading text-center">Keynotes</h2>
         <p class="col-md-12 text-center">
-          Des keynotes gratuites et <strong>ouvertes au public</strong>
+          <!-- Des keynotes gratuites et <strong>ouvertes au public</strong> -->
+          Gratuites et <strong>ouvertes au public</strong> (aucune obligation de participer au Hackathon)
         </p>
 
         <div class="row">
+          <!-- <div>{{ keynotes.length }}</div> -->
           <Keynote :keynote="keynote" v-for="keynote in keynotes" :key="keynote.id" />
+          <!-- <ServeDev :item="item" v-for="item in keynotes" :key="item.id" /> -->
+
+        </div>
+        <div style="margin-top: 30px">
+          <a class="btn btn-primary" href="https://www.eventbrite.fr/o/alsace-digitale-3770132475" target="_blank">M'enscrire aux Keynotes</a>
+          <!-- <a href="https://www.facebook.com/alsace.digitale/" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="25px"/></a>
+          <a href="https://twitter.com/AlsaceDigitale" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="25px"/></a> -->
+        </div>
+        <div style="margin-top: 10px">
+          <a href="https://www.youtube.com/user/LaPlageDigitale/playlists" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" width="25px" style="margin-right: 10px"/>Retrouvez les videos des conferences précédentes sur Youtube</a>
+        </div>
+      </div>
+    </section>
           <!--
           <div class="about-text col-md-3">
             <h3 style="font-size: 20px; font-weight: bold;">
@@ -395,9 +411,7 @@
             </div>
           </div>
           -->
-        </div>
-      </div>
-    </section>
+        
     <!-- DESCRIPTION
 ================================= -->
     <section class="about-section section-gray section" id="about">
@@ -459,8 +473,12 @@
     </section>
     <!-- HOW IT WORKS ================================= -->
     <section class="how-it-works-section section" id="how-it-works">
-      <div class="container-fluid">
-        <h2 class="section-heading text-center">Comment ça marche</h2>
+      <div class="container">
+
+<!-- ____----____----____----____----____----____----____----____----____ 04/06/2020 -->
+
+        <!-- <h2 class="section-heading text-center">Comment ça marche</h2> -->
+        <h2 class="section-heading text-center">Les étapes du Hackathon</h2>
         <div class="hiw-row row">
           <!-- HOW IT WORKS - ITEM<section class="section section-dark" id="keynotes">
 
@@ -752,8 +770,11 @@
     <!-- KEYNOTES -->
     <!-- TEAM ================================= -->
     <!-- Lundi 17/06/2019 en attente de coachs/jury-->
-    <section class="team-section section" id="coachs">
-      <div class="container-fluid">
+
+<!-- ____----____----____----____----____----____----____----____----____ 28/05/2020 -->
+
+    <section class="section" id="coachs">
+      <div class="container">
         <h2 class="section-heading text-center">Les Coachs</h2>
         <div class="team-row row">
           <!--<div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
@@ -766,7 +787,10 @@
                         </div>
                     </div>
                 </div>-->
-          <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+<!-- *-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+          <CoachJury :coachjury="coach" v-for="coach in shuffle(coaches)" :key="coach.id" />
+
+          <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member even">
               <img alt="Jérôme LEHMANN" class="team-member-picture" src="images/contents/coach/jerome-lehmann.jpg" />
               <div class="team-member-text" style="padding-bottom: 12px">
@@ -916,7 +940,7 @@
             <div class="team-member-position"></div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--<div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member">
                 <img alt="Olivier GROSSE" class="team-member-picture" src="images/contents/coach/olivier-grosse.jpg">
@@ -926,7 +950,7 @@
                 </div>
             </div>
         </div>-->
-      <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+      <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
         <div class="team-member">
           <img alt="Alexis MARTIN" class="team-member-picture" src="images/contents/coach/alexis-martin.jpg" />
           <div class="team-member-text">
@@ -1006,8 +1030,14 @@
             <div class="team-member-position"></div>
           </div>
         </div>
+      </div> -->
+<!-- *-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+        </div>
       </div>
     </section>
+
+<!-- ____----____----____----____----____----____----____----____----____ 28/05/2020 -->
+
     <!--
     <section class="team-section section" style="padding-top: 0;">
 
@@ -1322,12 +1352,18 @@
     </div>
     </section>
     -->
-    <section class="team-section section" id="jury">
-      <div class="container-fluid">
+<!-- ____----____----____----____----____----____----____----____----____ 31/05/2020 -->
+    <section class="section" id="jury">
+      <div class="container">
         <h2 class="section-heading text-center">Le Jury</h2>
 
         <div class="team-row row">
-          <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+<!-- *-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+          <!-- <Jury :jury="jury" v-for="jury in shuffle(juries)" :key="jury.id" /> -->
+          <CoachJury :coachjury="jury" v-for="jury in shuffle(juries)" :key="jury.id" />
+          <!-- <Coach :coach="jury" v-for="jury in shuffle(juries)" :key="jury.id" /> -->
+
+          <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member">
               <img alt="Michel HUSSHER" class="team-member-picture" src="images/contents/jury/michel-hussherr.jpg" />
               <div class="team-member-text" style="padding-bottom: 30px">
@@ -1398,7 +1434,7 @@
                 <div class="team-member-position"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -1897,21 +1933,23 @@
 // @ is an alias to /src
 //import HelloWorld from "@/components/HelloWorld.vue";
 
+import api from "@/services/api";
 import Keynote from "@/components/Keynote.vue";
-import axios from "axios";
+import CoachJury from "@/components/CoachJury.vue";
+
 
 export default {
   name: "Home",
   components: {
-    Keynote
+    Keynote,
+    CoachJury
   },
   data: function () {
     return {
       keynotes: [
         {
-          _id: "5eb6f7ece6b18200168a7e4e",
-          Title:
-            "Les relations interculturelles entre la France et l’Allemagne dans l’Industrie 4.0",
+          _id: "keynode_id",
+          Title: "keynote title",
           startTime: "2019-11-12T10:00:00.000Z",
           description:
             "Dans un contexte de globalisation, la transformation des entreprises s'opère souvent en tenant compte d’environnements multiculturels, de part la localisation des filiales, des fournisseurs, le recrutement des collaborateurs… la réussite de ces diverses situations nécessite d’avoir conscience des différences de point de vue, d’habitudes de travail, de process.\nVu de ce côté du Rhin, l’allemand serait vraiment plus pragmatique ? ",
@@ -1919,13 +1957,45 @@ export default {
           updatedAt: "2020-05-09T18:35:24.791Z",
           id: "5eb6f7ece6b18200168a7e4e"
         }
+      ],
+      coaches: [
+        {
+          firstname: "Prénom",
+          lastname: "NOM"
+        }
+      ],
+      juries: [
+        {
+          firstname: "Prénom",
+          lastname: "NOM"
+        }
       ]
     };
   },
   mounted: function () {
-    axios.get("http://localhost:1337/keynotes").then(resp => {
+    console.log(api.getApiRoot());
+    console.log(api.getProcessEnv());
+    api.getKeynotes().then(resp => {
       this.keynotes = resp.data;
     });
+    api.getCoaches().then(resp => {
+      this.coaches = resp.data;
+    });
+    api.getJuries().then(resp => {
+      this.juries = resp.data;
+    });
+  },
+  methods: {
+    shuffle: function (arr) {
+      let i, j, temp;
+      for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+      return arr;    
+    }
   }
 };
 </script>
