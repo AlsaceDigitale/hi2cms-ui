@@ -1,13 +1,14 @@
 # hi2cms-ui
 
-## Project setup
-```
-yarn install
-```
-
 ### Compiles and hot-reloads for development
 ```
 yarn serve
+```
+
+To change backend api url (by default its http://localhost:1337) 
+
+```
+VUE_APP_API_ROOT="http://YOUR_SERVER_IP:YOUR_PORT" yarn serve
 ```
 
 ### Compiles and minifies for production
