@@ -60,20 +60,39 @@
       </a>
     </div>
 
-    <section class="headline-section section-accent section" style="padding-bottom: 30px; padding-top: 90px;">
+<!-- ____----____----____----____----____----____----____----____----____ 10/06/2020 -->
+    <!-- Announces -->
+    <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h3 class="text-center">
+            <!-- <h3 class="text-center">
               L'édition 2019 est déjà terminée, mais ce n'est que le début pour
               vos projets !
-            </h3>
+            </h3> -->
+            <Announce :announces="announces" />
 
-            <div class="closing-buttons tada animated done-animation" target="_blank" data-animation="tada">
+            <!-- <div class="closing-buttons tada animated done-animation" target="_blank" data-animation="tada">
               <a href="https://medium.com/@AlsaceDigitale/en-direct-live-du-hacking-industry-camp-2019-cc06732d6491 " class="btn btn-lg btn-primary">REVIVRE L'EVENEMENT</a>
-            </div>
+            </div> -->
           </div>
         </div>
+      </div>
+    </section>
+
+<!-- ____----____----____----____----____----____----____----____----____ 12/06/2020 -->
+    <!-- Plan of the Hacking Industry Camp "key steps" -->
+    <section>
+      <div class="container">
+        <h1 class="hero-title">Hacking Industry Camp</h1>
+        <h3>LES ÉTAPES CLÉS</h3>
+
+        <Process :processes="processes" />
+
+        <h4>
+          UN PARCOURS DE 6 MOIS <br/>
+          ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION
+        </h4>
       </div>
     </section>
 
@@ -277,12 +296,12 @@
 
         <div class="row">
           <!-- <div>{{ keynotes.length }}</div> -->
-          <Keynote :keynote="keynote" v-for="keynote in keynotes" :key="keynote.id" />
+          <Keynote :keynote="keynote" v-for="keynote in keynotes" :key="keynote.startTime" />
           <!-- <ServeDev :item="item" v-for="item in keynotes" :key="item.id" /> -->
 
         </div>
         <div style="margin-top: 30px">
-          <a class="btn btn-primary" href="https://www.eventbrite.fr/o/alsace-digitale-3770132475" target="_blank">M'enscrire aux Keynotes</a>
+          <a class="btn btn-primary" href="https://www.eventbrite.fr/o/alsace-digitale-3770132475" target="_blank">M'inscrire aux Keynotes</a>
           <!-- <a href="https://www.facebook.com/alsace.digitale/" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="25px"/></a>
           <a href="https://twitter.com/AlsaceDigitale" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="25px"/></a> -->
         </div>
@@ -1936,13 +1955,16 @@
 import api from "@/services/api";
 import Keynote from "@/components/Keynote.vue";
 import CoachJury from "@/components/CoachJury.vue";
-
+import Announce from "@/components/Announce.vue";
+import Process from "@/components/Process.vue";
 
 export default {
   name: "Home",
   components: {
     Keynote,
-    CoachJury
+    CoachJury,
+    Announce,
+    Process
   },
   data: function () {
     return {
@@ -1969,6 +1991,18 @@ export default {
           firstname: "Prénom",
           lastname: "NOM"
         }
+      ],
+      announces: [
+        {
+          title: "titre",
+          subTitle: "sous-titre"
+        }
+      ],
+      processes: [
+        {
+          title: "titre",
+          description: "description"
+        }
       ]
     };
   },
@@ -1983,6 +2017,12 @@ export default {
     });
     api.getJuries().then(resp => {
       this.juries = resp.data;
+    });
+    api.getAnnounces().then(resp => {
+      this.announces = resp.data;
+    });
+    api.getProcesses().then(resp => {
+      this.processes = resp.data;
     });
   },
   methods: {

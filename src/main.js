@@ -37,6 +37,11 @@ Vue.filter('capitalize', function (value) {
   return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
+Vue.filter('timesDifference', function (value) {
+  const eventTime = moment(value);
+  return moment().diff(eventTime, 'hours');
+});
+
 new Vue({
   router,
   render: h => h(App)
