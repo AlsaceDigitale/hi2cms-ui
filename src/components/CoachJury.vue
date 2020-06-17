@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import api from '@/services/api.js';
+
 export default {
     name: "CoachJury",
     props: {
@@ -43,19 +45,20 @@ export default {
     },
     methods: {
         thumbUrl: function (coachjury) {
-            return "http://192.168.0.24:1337" + coachjury.photo[0].url;
+            return api.getMediaRoot() + coachjury.photo[0].url;
         }
     }
 }
 </script>
 
-<style scoped>
+<style>
 @import url('https://use.fontawesome.com/releases/v5.13.0/css/all.css');
     .boxShadow {
         padding: 10px;
+        background-color: whitesmoke;
         /* padding-top: 12px; */
         /* padding-bottom: 12px; */
-        box-shadow: 2px 2px 5px 1px #888888;
+        /* box-shadow: 2px 2px 5px 1px #888888; */
         /* margin: 10px; */
     }
     .name {
