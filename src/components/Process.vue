@@ -10,6 +10,7 @@
                 </div>
             </div>
         </slide>
+        <div></div>
         <hooper-pagination slot="hooper-addons"></hooper-pagination>
     </hooper>
 </template>
