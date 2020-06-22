@@ -1,11 +1,18 @@
 <template>
   <hooper class="hooperAnnounce" :centerMode="true" :autoPlay="true" :playSpeed="4000" :infiniteScroll="true">
     <slide  v-for="(announce, indx) in announces" :key="indx" :index="indx">
-        <div v-if="announce.enabled" :style="{backgroundImage: announce.backgroundImage}">
-            
-            <h3 v-if="announce.title" class="title" style="margin-bottom: 0;line-height: 1.3em">{{ announce.title }}</h3>
-            
+        <div v-if="announce.enabled">
             <div style="position: relative">
+                <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title">
+                <!-- <div class="card-body"> -->
+                    <h4 class="title">{{ announce.title }}</h4>
+                <!-- </div> -->
+            </div>
+
+            <!-- <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%"/> -->
+            <!-- <h3 v-if="announce.title" class="title" style="margin-bottom: 0;line-height: 1.3em">{{ announce.title }}</h3> -->
+            
+            <!-- <div style="position: relative">
                 <div v-if="announce.subTitle" class="subTitle" style="margin-bottom: 5px">{{ announce.subTitle }}</div>
                 
                 <div v-if="announce.startDate" class="subTitle" style="margin-bottom: 14px">
@@ -14,39 +21,10 @@
                 
                 <a v-if="announce.link" class="btn btn-primary buttonSize" :href="announce.link" target="_blank">J'y vais !</a>
                 
+
                 <div v-if="announce.thumbnail != ''" class="imgPosition" style="position: absolute">
                     <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="25%"/>
                 </div>
-            </div>
-
-
-            <!-- <div class="row" style="position: relative">
-                <div class="col-md-2 col-sm-3">
-                    <div class="imgPosition" style="position: absolute; left:-25.5%; top: 35%">
-                        <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="25%"/>
-                    </div>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                    <p v-if="announce.subTitle" style="margin-bottom: 5px">{{ announce.subTitle }}</p>
-                    <div v-if="announce.startDate" style="margin-bottom: 10px">
-                        {{ announce.startDate | frStartTimeFormat | capitalize }} {{ announce.endDate | endTimeFormat }}
-                    </div>
-                    <a class="btn btn-primary buttonSize" :href="announce.link" target="_blank">J'y vais !</a>
-                </div>
-            </div> -->
-            
-
-
-            
-            
-
-            <!-- <div style="position: absolute; left:-20%; top: 26%">
-                <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="25%"/>
-            </div> -->
-            
-            
-            <!-- <div style="flaot: left; width: 20%; position: absolute; left: 1%; top: 5%">
-                <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%"/>
             </div> -->
 
         </div>
@@ -78,12 +56,12 @@ export default {
         HooperPagination
     },
     props: {
-        announces: Object
+        announces: Array
     },
     methods: {
         thumbUrl: function (announce) {
             if (announce.thumbnail != null) {
-                return api.getMediaRoot() + announce.thumbnail[0].url;
+                return api.getMediaRoot() + announce.thumbnail.url;
             }
         },
         // slideNext() {
@@ -93,32 +71,33 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .title {
+        position:absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.3em; 
+        color: #dddddd !important;
+        background-color: rgb(10,10,10,0.8); 
+        padding: 10px;
+        width: fit-content;
+        height: auto;
+    }
     .buttonSize {
         padding-top: 4px;
         padding-bottom: 4px;
     }
-    .hooperAnnounce {
+    /* .hooperAnnounce {
         height: 30vh;
-    }
+    } */
     @media screen and (max-width: 767px) {
         .title {
-            font-size: 15px;
-            height: 55px;
-        }
-        .imgPosition {
-            display: none;
-        }
-        .subTitle {
-            font-size: 13px;
-            text-align: center; 
-            margin-left: 0;
-        }
-        .hooperAnnounce {
-            height: 25vh;
+            font-size: 1em;
+            top: 42%;
         }
     }
-    @media screen and (min-width: 768px) {
+    /* @media screen and (min-width: 768px) {
         .title {
             height: 70px;
         }
@@ -150,6 +129,6 @@ export default {
             text-align: center; 
             margin-left: 0;
         }      
-    }
+    } */
     
 </style>
