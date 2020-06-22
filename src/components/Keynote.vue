@@ -10,7 +10,7 @@
       <!-- The image, date & language -->
       <div style="position: relative">
         <!-- Show the image of the event -->
-        <img v-if="timeDifference(keynote.startTime)" class="imageGray" :alt="keynote.title" :src="thumbUrl(keynote)" :title="keynote.title" width="100%"/>
+        <img class="imageGray" :alt="keynote.title" :src="thumbUrl(keynote)" :title="keynote.title" width="100%"/>
         <!-- Verify if the keynote is in english or in german, if yes, show the flag correspond -->
         <div class="flag">
           <div v-if="keynote.keynoteInEnglish" class="small" style="color: #bbbbbb"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/gb.svg" width="14px" class="imageGray" style="padding-bottom: 3px"> En Anglais</div>
@@ -29,7 +29,7 @@
       </div>
 
       <!-- Button of the description, when clicked, showing the event in modal -->
-      <button type="button" class="btn btn-secondary buttonSize" style="color: white; background-color: #777777" data-toggle="modal" :data-target="'#' + keynote.id">Description</button>
+      <button type="button" class="btn btn-primary buttonSize" data-toggle="modal" :data-target="'#' + keynote.name">Description</button>
       
       <!-- Button of the link to the event site -->
       <div style="margin: 10px; margin-bottom: 20px">
@@ -60,21 +60,25 @@
       </div>
 
       <!-- Button of the description, when clicked, showing the event in modal -->
-      <button type="button" class="btn btn-primary buttonSize" data-toggle="modal" :data-target="'#' + keynote.id">Description</button>
+      <button type="button" class="btn btn-primary buttonSize" data-toggle="modal" :data-target="'#' + keynote.name">Description</button>
       
       <!-- Button of the link to the event site -->
-      <div style="margin: 10px; margin-bottom: 20px">
+      <div v-if="keynote.ticketsUrl" style="margin: 10px; margin-bottom: 20px">
         <a class="btn btn-primary buttonSize" :href="keynote.ticketsUrl" target="_blank">J'y vais !</a>
+      </div>
+      <!-- Button of the link to the event site -->
+      <div v-else-if="keynote.link" style="margin: 10px; margin-bottom: 20px">
+        <a class="btn btn-primary buttonSize" :href="keynote.link" target="_blank">J'y vais !</a>
       </div>
     </div>
 
 <!-- ***** Show the Modal when user clicked the buttons of the description **** *** ** * -->
-    <div class="modal fade" :id="keynote.id" tabindex="-1" role="dialog" aria-labelledby="keynoteModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" :id="keynote.name" tabindex="-1" role="dialog" aria-labelledby="keynoteModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <!-- The header -->
           <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLongTitle" style="color: #222222">{{ keynote.title }}</h4>
+            <h4 class="modal-title" id="keynoteModalLongTitle" style="color: #222222">{{ keynote.title }}</h4>
             <button class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -22px; color: red">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -85,7 +89,7 @@
               <img :alt="keynote.title" :src="thumbUrl(keynote)" :title="keynote.title" width="100%"/>
             </div>
             <!-- The names of the speaker -->
-            <div style="text-align: left; padding: 5px">
+            <div v-if="keynote.speaker" style="text-align: left; padding: 5px">
               <em class="small">Interlocuteur : {{ keynote.speaker }}</em>
             </div>
             <!-- Show the date & the hours of the event -->
@@ -100,9 +104,18 @@
               <div v-if="keynote.keynoteInEnglish">Keynote : <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/gb.svg" width="14px" style="padding-bottom: 3px"> En Anglais</div>
               <div v-if="keynote.keynoteInGerman">Keynote : <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/de.svg" width="14px" style="padding-bottom: 3px"> En Allemand</div>
             </div>
-            <div>
-              <a class="btn btn-primary buttonSize" :href="keynote.ticketsUrl" target="_blank">J'y vais !</a>
+            <div v-if="timeDifference(keynote.startTime)">
+              <a class="btn btn-primary buttonSize" style="color: white; background-color: #777777">J'y vais !</a>
             </div>
+            <div v-else>
+              <div v-if="keynote.ticketsUrl">
+                <a class="btn btn-primary buttonSize" :href="keynote.ticketsUrl" target="_blank">J'y vais !</a>
+              </div>
+              <div v-else-if="keynote.link">
+                <a class="btn btn-primary buttonSize" :href="keynote.link" target="_blank">J'y vais !</a>
+              </div>
+            </div>
+
           </div>
           <!-- The footer -->
           <!-- <div class="modal-footer">
@@ -157,7 +170,7 @@ export default {
   methods: {
     thumbUrl: function (keynote) {
       if (keynote.thumbnail != null) {
-        return api.getMediaRoot() + keynote.thumbnail[0].url;
+        return api.getMediaRoot() + keynote.thumbnail.url;
       }
     },
     timeDifference: function(date) {
@@ -188,7 +201,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
   .flag {
     position: absolute; 
     top: 0%; 
