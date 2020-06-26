@@ -33,7 +33,7 @@
       
       <!-- Button of the link to the event site -->
       <div style="margin: 10px; margin-bottom: 20px">
-        <a class="btn btn-secondary buttonSize" style="color: white; background-color: #777777">J'y vais !</a>
+        <a class="btn btn-secondary buttonSize" style="color: white; background-color: #777777">Evènement passé</a>
       </div>
     </div>
 
@@ -105,7 +105,7 @@
               <div v-if="keynote.keynoteInGerman">Keynote : <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/1x1/de.svg" width="14px" style="padding-bottom: 3px"> En Allemand</div>
             </div>
             <div v-if="timeDifference(keynote.startTime)">
-              <a class="btn btn-primary buttonSize" style="color: white; background-color: #777777">J'y vais !</a>
+              <a class="btn btn-primary buttonSize" style="color: white; background-color: #777777">Evènement passé</a>
             </div>
             <div v-else>
               <div v-if="keynote.ticketsUrl">

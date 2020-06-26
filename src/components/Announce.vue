@@ -1,12 +1,10 @@
 <template>
-  <hooper class="hooperAnnounce" :centerMode="true" :autoPlay="true" :playSpeed="4000" :infiniteScroll="true">
+  <hooper :centerMode="true" :autoPlay="true" :playSpeed="4000" :infiniteScroll="true">
     <slide  v-for="(announce, indx) in announces" :key="indx" :index="indx">
         <div v-if="announce.enabled">
             <div style="position: relative">
-                <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title">
-                <!-- <div class="card-body"> -->
-                    <h4 class="title">{{ announce.title }}</h4>
-                <!-- </div> -->
+                <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%">
+                <h3 class="title">{{ announce.title }}</h3>
             </div>
 
             <!-- <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%"/> -->
@@ -63,10 +61,7 @@ export default {
             if (announce.thumbnail != null) {
                 return api.getMediaRoot() + announce.thumbnail.url;
             }
-        },
-        // slideNext() {
-        // this.$refs.carousel.slideNext();
-        // }
+        }
     }
 }
 </script>
@@ -74,12 +69,12 @@ export default {
 <style scoped>
     .title {
         position:absolute;
-        top: 30%;
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1.3em; 
         color: #dddddd !important;
-        background-color: rgb(10,10,10,0.8); 
+        /* background-color: rgb(10,10,10,0.8);  */
         padding: 10px;
         width: fit-content;
         height: auto;
@@ -88,15 +83,13 @@ export default {
         padding-top: 4px;
         padding-bottom: 4px;
     }
-    /* .hooperAnnounce {
-        height: 30vh;
-    } */
-    @media screen and (max-width: 767px) {
-        .title {
-            font-size: 1em;
-            top: 42%;
-        }
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 1.2em;
+        top: 30%;
     }
+}
     /* @media screen and (min-width: 768px) {
         .title {
             height: 70px;

@@ -7,7 +7,7 @@
         <div v-for="partner in partnerCategory.partners" :key="partner.id">
             <div v-if="partner.visible">
                 <a :href="partner.link" target="_blank">
-                    <img :alt="partner.title" :src="thumbUrl(partner)" :title="partner.title" />
+                    <img :style="{height: partnerCategory.imageHeight}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
                 </a>
             </div>
         </div>
@@ -18,14 +18,14 @@
 import api from '@/services/api.js';
 
 export default {
-    name: "Partner",
+    name: "PartnerCategory",
     props: {
         partnerCategory: Object
     },
     methods: {
         thumbUrl: function (partner) {
-            if (partner.image != null) {
-                return api.getMediaRoot() + partner.image.url;
+            if (partner.logo != null) {
+                return api.getMediaRoot() + partner.logo.url;
             }
         }
     }
