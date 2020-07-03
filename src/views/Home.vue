@@ -633,8 +633,6 @@ export default {
     };
   },
   mounted: function () {
-    console.log(api.getApiRoot());
-    console.log(api.getProcessEnv());
     api.getKeynotes().then(resp => {
       this.keynotes = resp.data;
     });
