@@ -23,3 +23,10 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Production deployment
+
+You have to set:
+
+- VUE_APP_API_ROOT : root of the backend api
+- VUE_APP_MEDIA_ROOT : prefix of media (empty if you use AWS)
