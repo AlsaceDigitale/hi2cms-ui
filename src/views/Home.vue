@@ -1,7 +1,7 @@
 <template>
   <div class="document" id="document">
 <!-- HEADER ======================================= -->
-    <Navbar />
+    <Navbar :maskableblocks="maskableblocks" />
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
       <!-- <Navbar :maskableblocks="maskableblocks" /> -->
     <!-- </MaskableBlock> -->
@@ -37,9 +37,9 @@
     </section>
 
 <!-- PROCESS , KEYSTEPS , HACKATHON =============== -->
-    <MaskableBlock :maskableblocks="maskableblocks">
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
       <!-- Processes -->
-      <section id="process" slot="process">
+      <section v-if="checkVisibility('process')" id="process">
         <div class="container">
           <h1 class="hero-title" style="margin-bottom: 0">Hacking Industry Camp</h1>
           <h3 style="margin-top: 0">LES ÉTAPES CLÉS</h3>
@@ -51,12 +51,12 @@
             ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION
           </h4>
         </div>
-      </section>
-    
+      <!-- </section> -->
+    <!-- v-if="process.title != 'Hackathon' && process.title != 'Post'" -->
       <!-- KeySteps -->
       <!-- Define the section correspond to "key step" automatically -->
-      <section v-for="process in processes" :key="process.id" style="border-top: 1px solid #444" slot="process">
-        <div v-if="process.title != 'Hackathon'" :style="{backgroundColor: process.backgroundColor}" class="section" :id="process.title"> 
+      <div v-for="process in processes" :key="process.id" style="border-top: 1px solid #444">
+        <div v-if="process.title !== 'Hackathon' && process.title !== 'Post Hackathon'" :style="{backgroundColor: process.backgroundColor}" class="section" :id="process.title"> 
           <!-- class="section section-dark"  -->
           <!-- <div v-if="process.priority != 1"><hr></div> -->
           <div class="container">
@@ -69,15 +69,16 @@
             </div>
 
             <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">{{ process.stepDescription }}</p>
-            <p v-if="process.stepContact">{{ process.stepContact }}  <a style="cursor: pointer" data-toggle="modal" :data-target="'#' + process.priority"> Contactez-nous</a></p>
+            <p v-if="process.stepContact"><a href="mailto:contact@alsacedigitale.org" style="cursor: pointer">{{ process.stepContact }}</a></p>
+            <!-- <p v-if="process.stepContact">{{ process.stepContact }}  <a style="cursor: pointer" data-toggle="modal" :data-target="'#' + process.priority"> Contactez-nous</a></p> -->
           </div>
         </div>
-        <div v-else :id="process.title" class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark" style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div v-else-if="process.title === 'Hackathon'" :id="process.title" class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark" style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
             <Hackathon />
         </div>
 
         <!-- ***** Show the Modal when user clicked the buttons of the description **** *** ** * -->
-        <div class="modal fade" :id="process.priority" tabindex="-1" role="dialog" aria-labelledby="keynoteModalCenterTitle" aria-hidden="true">
+        <!-- <div class="modal fade" :id="process.priority" tabindex="-1" role="dialog" aria-labelledby="keynoteModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <form action="">
@@ -104,9 +105,10 @@
               </form>
             </div>
           </div>
-        </div>
+        </div> -->
+      </div>
       </section>
-    </MaskableBlock>
+    <!-- </MaskableBlock> -->
 
 <!-- ABOUT ======================================== -->
     <section class="about-section section-gray section" id="about">
@@ -178,8 +180,8 @@
     </section>
     
 <!-- KEYNOTES ===================================== -->
-    <MaskableBlock :maskableblocks="maskableblocks">
-      <section class="section section-dark" id="keynotes" slot="keynote">
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
+      <section v-if="checkVisibility('keynote')" class="section section-dark" id="keynotes">
         <div class="section-background">
           <div class="section-background-image parallax" data-stellar-ratio="0.4">
             <img alt="" src="images/backgrounds/background-keynote-hic.jpg" style="opacity: 0.08;" />
@@ -205,11 +207,11 @@
             <a href="https://www.youtube.com/user/LaPlageDigitale/playlists" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" width="25px" style="margin-right: 10px; margin-top: -4px"/>Retrouvez les videos des conferences précédentes sur Youtube</a>
           </div>
         </div>
-      </section>        
-    </MaskableBlock>
+      </section>   
+    <!-- </MaskableBlock> -->
 
 <!-- The Planning ================================= -->
-    <section class="section" id="planning">
+    <section v-if="checkVisibility('planning')" class="section" id="planning">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
@@ -237,7 +239,78 @@
       </div>
     </section>
 
-<!-- HEADLINE ===================================== -->
+
+<!-- COACH ======================================== --> 
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
+      <section v-if="checkVisibility('coach')" class="section" id="coachs">
+        <div class="container">
+          <h2 class="section-heading text-center">Les Coachs</h2>
+          <div class="team-row row">
+            <CoachJury :coachjury="coach" v-for="coach in shuffle(coaches)" :key="coach.id" />
+          </div>
+        </div>
+      </section>
+    <!-- </MaskableBlock> -->
+         
+<!-- JURY ======================================== --> 
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
+      <section v-if="checkVisibility('jury')" class="section" id="jury">
+        <div class="container">
+          <h2 class="section-heading text-center">Le Jury</h2>
+          <div class="team-row row">
+            <CoachJury :coachjury="jury" v-for="jury in shuffle(juries)" :key="jury.id" />
+          </div>
+        </div>
+      </section>
+    <!-- </MaskableBlock> -->
+
+<!-- RESULT ====================================== --> 
+    <section v-if="checkVisibility('result')" id="winners" class="section">
+      <div class="container">
+        <h2 class="section-heading text-center">Les résultats</h2>
+        <p class="col-md-12 text-center">
+          Pas moins de 12 prototypes de projets sont sortis de cette édition
+          2020, et 9 d'entre eux ont été primés
+        </p>
+        <!-- Putting the list of winners in two part : -->
+        <ul class="col-md-12" style="padding-left: 50px; list-style: none; text-align: left">
+          <li v-for="result in results" :key="result.id" class="winner">
+            <!-- The first part for the order -->
+            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6">
+              <i class="fa fa-trophy"></i> {{ result.classement }} : 
+            </div>
+            <!-- The second for the prize -->
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <a :href="result.link" target="_blank">{{ result.title }}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+<!-- POST HACKATHON ============================== -->
+    <!-- <section v-if="selectKeystep('Post')"> -->
+    <div v-if="checkVisibility('process')">
+      <section v-for="process in processes" :key="process.id">
+        <div v-if="process.title === 'Post Hackathon'" :style="{backgroundColor: process.backgroundColor}" class="section" :id="process.title">
+            <div class="container">
+              <h1 class="section-heading text-center">{{ process.title }}</h1>
+              <p v-if="process.stepIntroduction" style="margin-bottom: 10px">{{ process.stepIntroduction }}</p>
+              <p v-if="process.stepOrder" style="margin-top: 0; margin-bottom: 30px">{{ process.stepOrder }}</p>
+
+              <div class="row">
+                <Keynote :keynote="keystep" v-for="keystep in process.keysteps" :key="keystep.order" />
+              </div>
+
+              <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">{{ process.stepDescription }}</p>
+              <p v-if="process.stepContact"><a href="contact@alsacedigitale.org" style="cursor: pointer">{{ process.stepContact }}</a></p>
+            </div>
+          </div>
+      </section>
+    </div>
+
+<!-- HEADLINE ==================================== -->
     <section class="headline-section section" id="headline">
       <div class="container">
         <div class="row">
@@ -316,51 +389,10 @@
       </div>
     </section>
 
-<!-- COACH ======================================== --> 
-    <MaskableBlock :maskableblocks="maskableblocks">
-      <section class="section" id="coachs" slot="coach">
-        <div class="container">
-          <h2 class="section-heading text-center">Les Coachs</h2>
-          <div class="team-row row">
-            <CoachJury :coachjury="coach" v-for="coach in shuffle(coaches)" :key="coach.id" />
-          </div>
-        </div>
-      </section>
-    </MaskableBlock>
-         
-<!-- JURY ======================================== --> 
-    <MaskableBlock :maskableblocks="maskableblocks">
-      <section class="section" id="jury" slot="jury">
-        <div class="container">
-          <h2 class="section-heading text-center">Le Jury</h2>
-          <div class="team-row row">
-            <CoachJury :coachjury="jury" v-for="jury in shuffle(juries)" :key="jury.id" />
-          </div>
-        </div>
-      </section>
-    </MaskableBlock>
-
-<!-- RESULT ====================================== --> 
-    <section id="winners" class="section">
-      <div class="container">
-        <h2 class="section-heading text-center">Les résultats</h2>
-        <p class="col-md-12 text-center">
-          Pas moins de 12 prototypes de projets sont sortis de cette édition
-          2020, et 9 d'entre eux ont été primés
-        </p>
-
-        <ul class="col-md-8 col-md-offset-2" style="padding-left: 50px; list-style: none; text-align: left">
-          <li v-for="result in results" :key="result.id">
-            <i class="fa fa-trophy"></i> {{ result.classement }} : 
-            <a :href="result.link" target="_blank">{{ result.title }}</a>
-          </li>
-        </ul>
-      </div>
-    </section>
 
 <!-- PARTNER ===================================== -->
-    <MaskableBlock :maskableblocks="maskableblocks">
-      <section class="section-dark section" id="sponsors" style="padding-bottom: 30px; padding-top: 30px;" slot="partner">
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
+      <section v-if="checkVisibility('partner')" class="section-dark section" id="sponsors" style="padding-bottom: 30px; padding-top: 30px;">
         <div class="container">
           <h2 class="section-heading text-center hidden">
             Partenaires et sponsors
@@ -370,14 +402,14 @@
         
         </div>
       </section>
-    </MaskableBlock>
+    <!-- </MaskableBlock> -->
 
 <!-- FAQ ========================================= -->
-    <MaskableBlock :maskableblocks="maskableblocks">
-      <section class="faq-section section" id="faq" slot="question">
+    <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
+      <section v-if="checkVisibility('question')" class="faq-section section" id="faq">
         <div class="container">
           <h2 class="section-heading text-center">Foire aux questions</h2>
-          <div class="faq-row row">
+          <div class="faq-row row text-left">
             <div v-for="question in questions" :key="question.id" class="col-md-6 height">
               <div class="faq-item">
                 <span class="faq-item-icon fa fa-question-circle"></span>
@@ -388,13 +420,34 @@
           </div>
         </div>
       </section>
-    </MaskableBlock>
+    <!-- </MaskableBlock> -->
+
+<!-- CONTACT + MAPS ============================== -->
+    <section class="contact-maps-section" id="contact-maps">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 card">
+            <h2 class="card-header section-heading">Le Lieu</h2>
+            <div class="card-body">
+              <h5>Cette année encore, le Hacking Industry Camp aura lieu à TPS</h5>
+              <h5 class="card-title text-left"><i class="fa fa-university" aria-hidden="true"></i> Télécom Physique Strasbourg</h5>
+              <p class="card-text text-left"><i class="fa fa-map-marker" aria-hidden="true"></i> Pôle API, 300 Bd Sébastien Brant, 67400 Illkirch-Graffenstaden</p>
+              <p class="card-text text-left"><i class="fa fa-phone" aria-hidden="true"></i> 03 68 85 45 10</p>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <Map />
+          </div>
+        </div>
+
+      </div>
+    </section>
         
 <!-- CONTACT + MAPS ============================== -->
-    <section class="contact-maps-section section" id="contact-maps">
-      <div class="section-background">
+    <!-- <section class="contact-maps-section section" id="contact-maps">
+      <div class="section-background"> -->
         <!-- MAPS BACKGROUND -->
-        <div class="section-background-maps" style="background-image: url('images/contents/map.jpg')"></div>
+        <!-- <div class="section-background-maps" style="background-image: url('images/contents/map.jpg')"></div>
         <div class="container">
           <div class="contact-maps-row row">
             <div class="col-md-7 col-md-offset-5">
@@ -424,7 +477,8 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
 <!-- FOOTER ====================================== -->
     <section class="footer-section section" id="footer">
       <div class="container">
@@ -437,21 +491,46 @@
           <!-- <a href="https://drive.google.com/file/d/1j-l3JHPOevdKIlTub1AjhZm5dKnm9mHa/view?usp=sharing" target="_blank">Communiqué de presse</a> -
     <a href="https://drive.google.com/open?id=0B0S2y3rk51DNZ1BFNFI4cWFWUjQ2aThUblRBaVl5OWM3RmVv" target="_blank">Dossier de presse</a> -->
         </div>
-        <div class="footer-socmed">
+        <!-- <div class="footer-socmed">
           <a href="http://facebook.com/alsace.digitale" target="_blank"><span class="fa fa-facebook"></span></a>
           <a href="https://twitter.com/AlsaceDigitale" target="_blank"><span class="fa fa-twitter"></span></a>
-        </div>
+        </div> -->
         <div class="footer-copyright">
-          &copy; 2019
+          <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#mentionsLegales">Mentions Légales</button> -->
+          <a href="https://digitalescapegame.osc-fr1.scalingo.io/mentions-legales/" target="_blank">Mentions Légales</a>
+          &copy; 2020
           <a href="http://www.alsacedigitale.org/" target="_blank" title="Alsace Digitale">Alsace Digitale</a>
           •
           <strong>Précédentes éditions :</strong>
           <a href="http://2015.hackingindustry.camp/" target="_blank">2015</a> -
           <a href="http://2016.hackingindustry.camp/" target="_blank">2016</a> -
           <a href="http://2017.hackingindustry.camp/" target="_blank">2017</a> -
-          <a href="http://2018.hackingindustry.camp/" target="_blank">2018</a>
+          <a href="http://2018.hackingindustry.camp/" target="_blank">2018</a> -
+          <a href="http://2019.hackingindustry.camp/" target="_blank">2019</a>
         </div>
       </div>
+
+      <!-- Modal -->
+      <!-- <div class="modal fade" id="mentionsLegales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Mentions Légales</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
     </section>
     <!-- </div> -->
   </div>
@@ -470,7 +549,8 @@ import Hackathon from "@/components/Hackathon.vue";
 import About from "@/components/About.vue";
 import PartnerCategory from "@/components/PartnerCategory.vue";
 import Navbar from "@/components/Navbar.vue";
-import MaskableBlock from "@/components/MaskableBlock.vue";
+import Map from "@/components/Map.vue";
+// import MaskableBlock from "@/components/MaskableBlock.vue";
 
 // import KeyStep from "@/components/KeyStep.vue";
 
@@ -485,7 +565,8 @@ export default {
     About,
     PartnerCategory,
     Navbar,
-    MaskableBlock
+    Map
+    // MaskableBlock
     // KeyStep
   },
   data: function () {
@@ -542,16 +623,13 @@ export default {
           title: "titre"
         }
       ],
-      zones: [
-        {
-          name: "zone"
-        }
-      ],
       maskableblocks: [
         {
           name: "name"
         }
-      ]
+      ],
+  
+      menu: []
     };
   },
   mounted: function () {
@@ -599,7 +677,39 @@ export default {
         arr[j] = temp;
       }
       return arr;    
+    },
+    checkVisibility : function(zoneName) {
+      let zone = this.maskableblocks.find(element => element.name === zoneName);
+      if (zone !== undefined) {
+        if(zone.visible === true) {
+          // console.log('this is true ' + zone.name + ' and ' + zone.visible);
+          return true;
+        } else {
+          // console.log('this is false ' + zone.name + ' and ' + zone.visible);
+          return false;
+        }
+      }  
+    },
+    selectKeystep : function(keyName) {
+      let step = this.processes.find(element => element.name === keyName);
+      if (step !== undefined) {
+        return step;
+      }  
     }
+      // return this.maskableblocks.filter((element) => {
+      //   if(element.name.match(zoneName)) {
+      //     if (element.visible) {
+      //       console.log(element.name + ' ' + element.visible);
+      //       return true;
+      //     } else {
+      //       return false;
+      //     }
+          // console.log(element.visible + element.name);
+        // }
+        //   return true;
+        // else
+        //   return false;
+      // });
   }
 };
 </script>
@@ -617,6 +727,11 @@ export default {
     }
     .logoSize {
       font-size: 17px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .winner {
+      margin-bottom: 5px;
     }
   }
 

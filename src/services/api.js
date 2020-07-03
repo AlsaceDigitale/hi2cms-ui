@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.24:1337/";
-let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "http://192.168.0.24:1337";
+let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.30:1337/";
+let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "http://192.168.0.30:1337";
 
 export const HTTP = axios.create({
     baseURL: baseURL
@@ -40,6 +40,9 @@ export default {
     },
     getMaskableBlocks: function () {
         return HTTP.get("/maskableblocks");
+    },
+    getMenuBlocks: function () {
+        return HTTP.get("/maskableblocks").filter(element => element.visible === true);
     },
     // getKeySteps: function () {
     //     return HTTP.get("/keysteps");
