@@ -1,5 +1,5 @@
 <template>
-    <header class="header-section section section-dark navbar navbar-fixed-top" id="header" style="background: rgba(0,0,0,0.8);">
+    <header class="header-section section section-dark navbar navbar-fixed-top" id="header" style="background: rgba(0,0,0,0.8); z-index: 1010">
       <div class="container-fluid">
         <div class="navbar-header navbar-left">
           <!-- RESPONSIVE MENU BUTTON -->
@@ -62,10 +62,24 @@
 <script>
 export default {
     name: "Navbar",
-    // props: {
-    //     maskableblocks: Array
-    // },
-    // methods: {
+    props: {
+        maskableblocks: Array
+    },
+    methods: {
+        getVisibleBlocks : function() {
+            let zone = this.maskableblocks.filter(element => element.visible === true);
+            console.log(zone);
+
+
+            // if (zone !== undefined) {
+            //     if(zone.visible === true) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // }  
+        }
+    }
     //     checkMaskableBlock : function (itemName) {
     //         this.maskableblocks.forEach(function(element) {
     //             if (element.name === itemName && element.visible === true) {

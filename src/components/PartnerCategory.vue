@@ -7,7 +7,26 @@
         <div v-for="partner in partnerCategory.partners" :key="partner.id">
             <div v-if="partner.visible">
                 <a :href="partner.link" target="_blank">
-                    <img :style="{height: partnerCategory.imageHeight}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
+                    <div v-if="partnerCategory.maxImageHeight">
+                        <div v-if="partner.height && (partner.height <= partnerCategory.maxImageHeight)">
+                            <img :style="{height: partner.height + 'px'}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
+                        </div>
+                        <div v-else-if="partner.height && (partner.height > partnerCategory.maxImageHeight)">
+                            <img :style="{height: partnerCategory.maxImageHeight + 'px'}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" /> 
+                        </div>
+                        <div v-else-if="partner.logo.height && (partner.logo.height > partnerCategory.maxImageHeight)">
+                            <img :style="{height: partnerCategory.maxImageHeight + 'px'}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" /> 
+                        </div>
+                        <div v-else>
+                            <img :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
+                        </div>
+                    </div>
+                    <div v-else-if="partner.height">
+                        <img :style="{height: partner.height + 'px'}" :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
+                    </div>
+                    <div v-else>
+                        <img :alt="partner.name" :src="thumbUrl(partner)" :title="partner.name" />
+                    </div>
                 </a>
             </div>
         </div>
