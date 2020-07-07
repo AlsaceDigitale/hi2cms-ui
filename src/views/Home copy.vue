@@ -2,11 +2,20 @@
   <div class="document" id="document">
     <!-- HEADER
 ================================= -->
-    <header class="header-section section section-dark navbar navbar-fixed-top" id="header" style="background: rgba(0,0,0,0.8);">
+    <header
+      class="header-section section section-dark navbar navbar-fixed-top"
+      id="header"
+      style="background: rgba(0,0,0,0.8);"
+    >
       <div class="container-fluid">
         <div class="navbar-header navbar-left">
           <!-- RESPONSIVE MENU BUTTON -->
-          <button class="navbar-toggle" data-target="#navigation" data-toggle="collapse" type="button">
+          <button
+            class="navbar-toggle"
+            data-target="#navigation"
+            data-toggle="collapse"
+            type="button"
+          >
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -14,10 +23,16 @@
           </button>
           <!-- HEADER LOGO -->
           <a class="navbar-logo navbar-brand anchor-link" href="#hero">
-            <img alt="logo alsace digitale" src="images/logos/Logo_HIC_White.png" />
+            <img
+              alt="logo alsace digitale"
+              src="images/logos/Logo_HIC_White.png"
+            />
           </a>
         </div>
-        <nav class="navigation navbar-collapse collapse navbar-right" id="navigation">
+        <nav
+          class="navigation navbar-collapse collapse navbar-right"
+          id="navigation"
+        >
           <!-- NAVIGATION LINKS -->
           <ul class="nav navbar-nav" id="header-nav">
             <li><a href="#keynotes">Keynotes</a></li>
@@ -34,13 +49,34 @@
             <li><a href="#faq">FAQ</a></li>
             <!-- HEADER ACTION BUTTON -->
             <li class="header-action-button">
-              <a class="btn btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" target="_blank">S'inscrire</a>
+              <a
+                class="btn btn-primary"
+                href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103"
+                target="_blank"
+                >S'inscrire</a
+              >
             </li>
             <li class="header-action-button">
-              <a class="btn btn-primary" href="http://hic2019.sparkboard.com" target="_blank">Les défis</a>
+              <a
+                class="btn btn-primary"
+                href="http://hic2019.sparkboard.com"
+                target="_blank"
+                >Les défis</a
+              >
             </li>
             <li>
-              <a aria-expanded="false" class="dropdown-toggle external language-choice" data-toggle="dropdown" href="#" role="button"><i class="fa fa-globe" style="font-size: 22px; vertical-align: -3px;"></i>&nbsp; FR <span class="caret"></span></a>
+              <a
+                aria-expanded="false"
+                class="dropdown-toggle external language-choice"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                ><i
+                  class="fa fa-globe"
+                  style="font-size: 22px; vertical-align: -3px;"
+                ></i
+                >&nbsp; FR <span class="caret"></span
+              ></a>
               <ul class="dropdown-menu dropdown-language" role="menu">
                 <li>
                   <a href="/en/">EN</a>
@@ -56,19 +92,42 @@
     </header>
     <div class="blog-sticky-logo">
       <a href="http://alsacedigitale.org" target="_blank">
-        <img alt="logo alsacedigitale" src="images/logos/AD-logo-132x132.png" title="par AlsaceDigitale" />
+        <img
+          alt="logo alsacedigitale"
+          src="images/logos/AD-logo-132x132.png"
+          title="par AlsaceDigitale"
+        />
       </a>
       <div style="font-size: 1.5em; margin-top: -12px; margin-right: 4px">
-        <a style="color: #FF0000; margin-right: 4px" href="https://www.youtube.com/user/LaPlageDigitale/playlists" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a style="color: #3b5998; margin-right: 4px" href="https://www.facebook.com/alsace.digitale/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a style="color: #1DA1F2" href="https://twitter.com/AlsaceDigitale" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a
+          style="color: #FF0000; margin-right: 4px"
+          href="https://www.youtube.com/user/LaPlageDigitale/playlists"
+          target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          style="color: #3b5998; margin-right: 4px"
+          href="https://www.facebook.com/alsace.digitale/"
+          target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          style="color: #1DA1F2"
+          href="https://twitter.com/AlsaceDigitale"
+          target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
       </div>
     </div>
 
-<!-- Announces -->
-<!-- Check the visibility of the Announces zone, if it's visible, show it, else not -->
+    <!-- Announces -->
+    <!-- Check the visibility of the Announces zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'announces' && zone.visible === true" class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
+      <section
+        v-if="zone.name === 'announces' && zone.visible === true"
+        class="headline-section section-accent section"
+        style="padding: 0; margin-top: 2.5vh"
+      >
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -87,84 +146,114 @@
       </section>
     </div>
 
-<!-- Processes , Keysteps , Hackathon -->
-<!-- Check the visibility of the processes zone, if it's visible, show it, else not -->
+    <!-- Processes , Keysteps , Hackathon -->
+    <!-- Check the visibility of the processes zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
       <div v-if="zone.name === 'processes' && zone.visible === true">
         <!-- Plan of the Hacking Industry Camp "key steps" -->
         <section>
           <div class="container">
-            <h1 class="hero-title" style="margin-bottom: 0">Hacking Industry Camp</h1>
+            <h1 class="hero-title" style="margin-bottom: 0">
+              Hacking Industry Camp
+            </h1>
             <h3 style="margin-top: 0">LES ÉTAPES CLÉS</h3>
 
             <Process :processes="processes" />
 
             <h4 style="margin-top: 30px; margin-bottom: 30px">
-              UN PARCOURS DE 6 MOIS <br/>
+              UN PARCOURS DE 6 MOIS <br />
               ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION
             </h4>
           </div>
         </section>
-    
+
         <!-- Define the section correspond to "key step" automatically -->
-        <section v-for="process in processes" :key="process.id" style="border-top: 1px solid #444">
-          <div v-if="process.title != 'Hackathon'" class="section section-dark" :id="process.title">
+        <section
+          v-for="process in processes"
+          :key="process.id"
+          style="border-top: 1px solid #444"
+        >
+          <div
+            v-if="process.title != 'Hackathon'"
+            class="section section-dark"
+            :id="process.title"
+          >
             <!-- <div v-if="process.priority != 1"><hr></div> -->
             <div class="container">
               <h1 class="section-heading text-center">{{ process.title }}</h1>
-              <p v-if="process.stepIntroduction" style="margin-bottom: 10px">{{ process.stepIntroduction }}</p>
-              <p v-if="process.stepOrder" style="margin-top: 0; margin-bottom: 30px">{{ process.stepOrder }}</p>
+              <p v-if="process.stepIntroduction" style="margin-bottom: 10px">
+                {{ process.stepIntroduction }}
+              </p>
+              <p
+                v-if="process.stepOrder"
+                style="margin-top: 0; margin-bottom: 30px"
+              >
+                {{ process.stepOrder }}
+              </p>
 
               <div class="row">
-                <Keynote :keynote="keystep" v-for="keystep in process.keysteps" :key="keystep.id" />
+                <Keynote
+                  :keynote="keystep"
+                  v-for="keystep in process.keysteps"
+                  :key="keystep.id"
+                />
               </div>
 
-              <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">{{ process.stepDescription }}</p>
+              <p
+                v-if="process.stepDescription"
+                style="margin-bottom: 10px; margin-top: 20px"
+              >
+                {{ process.stepDescription }}
+              </p>
               <p v-if="process.stepContact">{{ process.stepContact }}</p>
             </div>
           </div>
         </section>
 
-            <!-- HERO
+        <!-- HERO
         ================================= -->
-        <section class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark" id="Hackathon" style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <section
+          class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark"
+          id="Hackathon"
+          style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"
+        >
           <Hackathon />
         </section>
       </div>
     </div>
-      <!-- <div class="section-background"> -->
-        <!-- VIDEO BACKGROUND -->
-        <!--<div class="section-background-video section-background-dot-overlay parallax" data-stellar-ratio="0.4">
+    <!-- <div class="section-background"> -->
+    <!-- VIDEO BACKGROUND -->
+    <!--<div class="section-background-video section-background-dot-overlay parallax" data-stellar-ratio="0.4">
 <video preload="auto" autoplay loop muted poster="images/backgrounds/video-fallback-bg.jpg" style="opacity: 0.3;">
 <source type="video/mp4" src="videos/video-bg.mp4">
 <source type="video/ogg" src="videos/video-bg.ogv">
 <source type="video/webm" src="videos/video-bg.webm">
 </video>
 </div>-->
-        <!-- SLIDESHOW BACKGROUND -->
-        <!--<ul class="section-background-slideshow parallax" data-stellar-ratio="0.4" data-speed="800" data-timeout="4000">
+    <!-- SLIDESHOW BACKGROUND -->
+    <!--<ul class="section-background-slideshow parallax" data-stellar-ratio="0.4" data-speed="800" data-timeout="4000">
 <li><img src="images/backgrounds/hero-bg-slideshow-1.jpg" alt="" style="opacity: 0.25;"></li>
 <li><img src="images/backgrounds/hero-bg-slideshow-2.jpg" alt="" style="opacity: 0.25;"></li>
 <li><img src="images/backgrounds/hero-bg-slideshow-3.jpg" alt="" style="opacity: 0.2;"></li>
 </ul>-->
-      <!-- </div> -->
-      <!-- <div class="container">
+    <!-- </div> -->
+    <!-- <div class="container">
         <div class="hero-content">
           <div class="hero-content-inner">
             <div class="hero-heading text-center row" data-animation="fadeIn"> -->
-              <!--<div class="col-md-2">
+    <!--<div class="col-md-2">
 <img src="images/logos/h2017.png" alt="logo hacking industry camp" />
 </div>-->
-              <!-- <div class="col-md-10 col-md-offset-1">
+    <!-- <div class="col-md-10 col-md-offset-1">
                 <h1 class="section-heading text-center">HACKATHON</h1> -->
-                <!-- <h1 class="hero-title">Hacking Industry Camp</h1> -->
-                <!-- <h1 class="section-heading text-center">Du 5/6/7 février 2021 à TPS. Strasbourg </h1> -->
-                <!-- <p class="hero-tagline">
+    <!-- <h1 class="hero-title">Hacking Industry Camp</h1> -->
+    <!-- <h1 class="section-heading text-center">Du 5/6/7 février 2021 à TPS. Strasbourg </h1> -->
+    <!-- <p class="hero-tagline">
                   Du 11 au 13 octobre 2019 à l'INSA Strasbourg
                 </p> -->
-              <!-- </div>
+    <!-- </div>
             </div> -->
-            <!--<div class="newsbox col-md-10 col-md-offset-1">
+    <!--<div class="newsbox col-md-10 col-md-offset-1">
 <div style="font-size: 18px;color:#fff;padding-bottom: 10px;" class="text-center"><i class="fa fa-bullhorn"></i> &nbsp;Besoin de conseils pour pitcher votre projet ?</div>
 <div class="row" style="margin-bottom: 15px;">
 <div class="col-md-6">
@@ -175,7 +264,7 @@
 </div>
 </div>
 </div>-->
-            <!-- <div class="newsbox col-md-10 col-md-offset-1">
+    <!-- <div class="newsbox col-md-10 col-md-offset-1">
                          <div class="text-center" style="font-size: 18px;color:#fff;padding-bottom: 10px;"><i
                                  class="fa fa-calendar"></i> &nbsp;Événements organisés par nos partenaires (gratuits
                              mais sur inscription)
@@ -201,7 +290,7 @@
                              </div>
                          </div>
                      </div>-->
-            <!--    <div class="newsbox col-md-10 col-md-offset-1">
+    <!--    <div class="newsbox col-md-10 col-md-offset-1">
                             <div class="row" style="margin-bottom: 15px;">
                                 <div class="col-md-12">
                                     <a class="btn btn-default"
@@ -252,14 +341,14 @@
                                 </div>
                             </div>
                         </div>-->
-            <!-- <div class="hero-features row" style="margin-top: 45px;">
+    <!-- <div class="hero-features row" style="margin-top: 45px;">
               <div class="hero-features-left col-md-6">
                 <div class="video-embed"> -->
-                  <!-- <iframe allowfullscreen height="315" src="https://www.youtube.com/embed/LdxzQsZE93Y" width="560"></iframe> -->
-                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/QoWu4FlbYus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>       
+    <!-- <iframe allowfullscreen height="315" src="https://www.youtube.com/embed/LdxzQsZE93Y" width="560"></iframe> -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/QoWu4FlbYus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>       
                 </div> -->
-                <!--<img src="images/contents/amphi2.jpg" style="width: 100%" alt="hacking industry camp 2017">-->
-                <!-- <p class="lead">
+    <!--<img src="images/contents/amphi2.jpg" style="width: 100%" alt="hacking industry camp 2017">-->
+    <!-- <p class="lead">
                   <strong>54h pour stimuler l'innovation</strong> <br />La
                   cinquième édition du Hackathon dédié à l'Industrie en Alsace
                   <br />54h pour innover et inventer l'industrie 4.0
@@ -301,54 +390,82 @@
                     </p>
                   </li>
                 </ul> -->
-                <!-- <div class="hero-buttons col-md-12 text-center"> -->
-                  <!--<a class="btn btn-lg btn-primary" href="planning.pdf" style="margin-top: 20px;" target="_blank">Voir le planning</a>-->
-                  <!-- <a class="btn btn-lg btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" style="margin-top: 20px;" target="_blank">Je participe au hackathon !</a> -->
-                  <!--<a href="#winners" class="btn btn-lg btn-primary" style="margin-top: 20px;">Les résultats</a>
+    <!-- <div class="hero-buttons col-md-12 text-center"> -->
+    <!--<a class="btn btn-lg btn-primary" href="planning.pdf" style="margin-top: 20px;" target="_blank">Voir le planning</a>-->
+    <!-- <a class="btn btn-lg btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" style="margin-top: 20px;" target="_blank">Je participe au hackathon !</a> -->
+    <!--<a href="#winners" class="btn btn-lg btn-primary" style="margin-top: 20px;">Les résultats</a>
 <a href="https://www.facebook.com/media/set/?set=a.1860170557331117.1073741850.114361761912014&type=1&l=735a14f260" target="_blank" class="btn btn-lg btn-primary" style="margin-top: 20px;">Les photos</a>-->
-                  <!--<a href="#about" class="btn btn-lg btn-primary" style="margin-top: 20px;">Découvrir</a>-->
-                  <!--<button disabled="disabled" class="btn btn-default">La billetterie ouvre bientôt !</button>-->
-                <!-- </div>
+    <!--<a href="#about" class="btn btn-lg btn-primary" style="margin-top: 20px;">Découvrir</a>-->
+    <!--<button disabled="disabled" class="btn btn-default">La billetterie ouvre bientôt !</button>-->
+    <!-- </div>
               </div>
             </div>
           </div>
         </div>
       </div> -->
-    
-<!-- KEYNOTES -->
-<!-- Check the visibility of the processes zone, if it's visible, show it, else not -->
+
+    <!-- KEYNOTES -->
+    <!-- Check the visibility of the processes zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'keynotes' && zone.visible === true" class="section section-dark" id="keynotes">
+      <section
+        v-if="zone.name === 'keynotes' && zone.visible === true"
+        class="section section-dark"
+        id="keynotes"
+      >
         <div class="section-background">
-          <div class="section-background-image parallax" data-stellar-ratio="0.4">
-            <img alt="" src="images/backgrounds/background-keynote-hic.jpg" style="opacity: 0.08;" />
+          <div
+            class="section-background-image parallax"
+            data-stellar-ratio="0.4"
+          >
+            <img
+              alt=""
+              src="images/backgrounds/background-keynote-hic.jpg"
+              style="opacity: 0.08;"
+            />
           </div>
         </div>
         <div class="container">
           <h2 class="section-heading text-center">Keynotes</h2>
           <p class="col-md-12 text-center">
             <!-- Des keynotes gratuites et <strong>ouvertes au public</strong> -->
-            Gratuites et <strong>ouvertes au public</strong> (aucune obligation de participer au Hackathon)
+            Gratuites et <strong>ouvertes au public</strong> (aucune obligation
+            de participer au Hackathon)
           </p>
 
           <div class="row">
             <!-- <div>{{ keynotes.length }}</div> -->
-            <Keynote :keynote="keynote" v-for="keynote in keynotes" :key="keynote.id" />
+            <Keynote
+              :keynote="keynote"
+              v-for="keynote in keynotes"
+              :key="keynote.id"
+            />
             <!-- <ServeDev :item="item" v-for="item in keynotes" :key="item.id" /> -->
-
           </div>
           <div style="margin-top: 30px">
-            <a class="btn btn-primary" href="https://www.eventbrite.fr/o/alsace-digitale-3770132475" target="_blank">M'inscrire aux Keynotes</a>
+            <a
+              class="btn btn-primary"
+              href="https://www.eventbrite.fr/o/alsace-digitale-3770132475"
+              target="_blank"
+              >M'inscrire aux Keynotes</a
+            >
             <!-- <a href="https://www.facebook.com/alsace.digitale/" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="25px"/></a>
             <a href="https://twitter.com/AlsaceDigitale" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="25px"/></a> -->
           </div>
           <div style="margin-top: 10px">
-            <a href="https://www.youtube.com/user/LaPlageDigitale/playlists" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" width="25px" style="margin-right: 10px; margin-top: -4px"/>Retrouvez les videos des conferences précédentes sur Youtube</a>
+            <a
+              href="https://www.youtube.com/user/LaPlageDigitale/playlists"
+              target="_blank"
+              ><img
+                src="https://img.icons8.com/fluent/48/000000/youtube-play.png"
+                width="25px"
+                style="margin-right: 10px; margin-top: -4px"
+              />Retrouvez les videos des conferences précédentes sur Youtube</a
+            >
           </div>
         </div>
       </section>
     </div>
-          <!--
+    <!--
           <div class="about-text col-md-3">
             <h3 style="font-size: 20px; font-weight: bold;">
               Samedi 12 octobre de 11h à 12h
@@ -468,24 +585,28 @@
             </div>
           </div>
           -->
-        
-<!-- DESCRIPTION
+
+    <!-- DESCRIPTION
 ================================= -->
-<!-- Check the visibility of the About zone, if it's visible, show it, else not -->
+    <!-- Check the visibility of the About zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'about' && zone.visible === true" class="about-section section-gray section" id="about">
+      <section
+        v-if="zone.name === 'about' && zone.visible === true"
+        class="about-section section-gray section"
+        id="about"
+      >
         <About />
       </section>
     </div>
-      <!-- <div class="container">
+    <!-- <div class="container">
         <h2 class="section-heading text-center">A Propos</h2>
         <div class="about-row row"> -->
-          <!-- DESCRIPTION IMAGE -->
-          <!-- <div class="about-image col-md-6" data-animation="fadeIn">
+    <!-- DESCRIPTION IMAGE -->
+    <!-- <div class="about-image col-md-6" data-animation="fadeIn">
             <img alt="a propos" src="images/contents/a-propos.jpg" />
           </div> -->
-          <!-- DESCRIPTION TEXT -->
-          <!-- <div class="about-text col-md-6">
+    <!-- DESCRIPTION TEXT -->
+    <!-- <div class="about-text col-md-6">
             <p class="lead" style="font-size: 18px;padding-top: 0;">
               Le
               <strong>Hacking Industry Camp par
@@ -499,8 +620,8 @@
             </p>
             <ul class="icon-list">
               <li> -->
-                <!-- <span class="icon-list-icon fa fa-hand-o-up" data-animation="bounceIn"></span> -->
-                <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-hand-o-up" aria-hidden="true"></i></span>
+    <!-- <span class="icon-list-icon fa fa-hand-o-up" data-animation="bounceIn"></span> -->
+    <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-hand-o-up" aria-hidden="true"></i></span>
                 <h4 class="icon-list-title">Pointer les projets émergents</h4>
                 <p>
                   54 h pour participer à l’aventure Usine 4.0. Déplacer
@@ -509,8 +630,8 @@
                 </p>
               </li>
               <li> -->
-                <!-- <span class="icon-list-icon fa fa-heart-o" data-animation="bounceIn"></span> -->
-                <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-heart" aria-hidden="true"></i></span>
+    <!-- <span class="icon-list-icon fa fa-heart-o" data-animation="bounceIn"></span> -->
+    <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-heart" aria-hidden="true"></i></span>
                 <h4 class="icon-list-title">Génération Même pas peur</h4>
                 <p>
                   54 h pour innover à plusieurs. Un concentré d’énergie créative
@@ -519,8 +640,8 @@
                 </p>
               </li>
               <li> -->
-                <!-- <span class="icon-list-icon fa fa-lightbulb-o" data-animation="bounceIn"></span> -->
-                <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+    <!-- <span class="icon-list-icon fa fa-lightbulb-o" data-animation="bounceIn"></span> -->
+    <!-- <span class="icon-list-icon" data-animation="bounceIn"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
                 <h4 class="icon-list-title">
                   Idées d'aujourd'hui, Entreprises de demain
                 </h4>
@@ -535,15 +656,13 @@
           </div>
         </div>
       </div> -->
-    
 
-<!-- HOW IT WORKS ================================= -->
-<!-- Check the visibility of the About zone, if it's visible, show it, else not -->
+    <!-- HOW IT WORKS ================================= -->
+    <!-- Check the visibility of the About zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
       <div v-if="zone.name === 'steps' && zone.visible === true">
         <section class="how-it-works-section section" id="how-it-works">
           <div class="container">
-
             <!-- <h2 class="section-heading text-center">Comment ça marche</h2> -->
             <h2 class="section-heading text-center">Les étapes du Hackathon</h2>
             <div class="hiw-row row">
@@ -576,7 +695,11 @@
           1 -->
               <div class="col-sm-6 col-md-3" data-animation="fadeIn">
                 <div class="hiw-item">
-                  <img alt="le pitch" class="hiw-item-picture" src="images/contents/how1.jpg" />
+                  <img
+                    alt="le pitch"
+                    class="hiw-item-picture"
+                    src="images/contents/how1.jpg"
+                  />
                   <div class="hiw-item-text">
                     <span class="hiw-item-icon">1</span>
                     <h4 class="hiw-item-title">Le Pitch</h4>
@@ -590,13 +713,17 @@
               <!-- HOW IT WORKS - ITEM 2 -->
               <div class="col-sm-6 col-md-3" data-animation="fadeIn">
                 <div class="hiw-item even">
-                  <img alt="le choix des projets" class="hiw-item-picture" src="images/contents/how2.jpg" />
+                  <img
+                    alt="le choix des projets"
+                    class="hiw-item-picture"
+                    src="images/contents/how2.jpg"
+                  />
                   <div class="hiw-item-text">
                     <span class="hiw-item-icon">2</span>
                     <h4 class="hiw-item-title">Le choix des projets</h4>
                     <p class="hiw-item-description">
-                      Les gens votent pour les défis qui leur plaisent le plus, et
-                      forment des équipes autour des projets.
+                      Les gens votent pour les défis qui leur plaisent le plus,
+                      et forment des équipes autour des projets.
                     </p>
                   </div>
                 </div>
@@ -605,7 +732,11 @@
               <!-- HOW IT WORKS - ITEM 3 -->
               <div class="col-sm-6 col-md-3" data-animation="fadeIn">
                 <div class="hiw-item">
-                  <img alt="la construction" class="hiw-item-picture" src="images/contents/how3.jpg" />
+                  <img
+                    alt="la construction"
+                    class="hiw-item-picture"
+                    src="images/contents/how3.jpg"
+                  />
                   <div class="hiw-item-text">
                     <span class="hiw-item-icon">3</span>
                     <h4 class="hiw-item-title">La construction</h4>
@@ -618,7 +749,11 @@
               <!-- HOW IT WORKS - ITEM 4 -->
               <div class="col-sm-6 col-md-3" data-animation="fadeIn">
                 <div class="hiw-item even">
-                  <img alt="présentation finale" class="hiw-item-picture" src="images/contents/how4.jpg" />
+                  <img
+                    alt="présentation finale"
+                    class="hiw-item-picture"
+                    src="images/contents/how4.jpg"
+                  />
                   <div class="hiw-item-text">
                     <span class="hiw-item-icon">4</span>
                     <h4 class="hiw-item-title">La présentation finale</h4>
@@ -636,8 +771,16 @@
         <section class="section" id="planning">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
-                <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a>
+              <div
+                class="col-md-6 col-md-offset-3 closing-buttons"
+                data-animation="tada"
+              >
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="planning.pdf"
+                  target="_blank"
+                  >Consulter le planning complet</a
+                >
               </div>
               <!--</div>
                     </div>
@@ -671,16 +814,26 @@
     <button class="btn btn-default" disabled="disabled">La billetterie ouvre bientôt !</button>
     </div>-->
                 <div class="closing-buttons" data-animation="tada">
-                  <a class="btn btn-lg btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" target="_blank">J'y vais !</a>
+                  <a
+                    class="btn btn-lg btn-primary"
+                    href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103"
+                    target="_blank"
+                    >J'y vais !</a
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <h3 class="closing-shout">
-                  Inscris ? Consultez dès à présent la liste des défis, vous pouvez
-                  également proposer le vôtre !
+                  Inscris ? Consultez dès à présent la liste des défis, vous
+                  pouvez également proposer le vôtre !
                 </h3>
                 <div class="closing-buttons" data-animation="tada">
-                  <a class="btn btn-lg btn-primary" href="http://hic2019.sparkboard.com/" target="_blank">Voir les défis / Proposer un défi</a>
+                  <a
+                    class="btn btn-lg btn-primary"
+                    href="http://hic2019.sparkboard.com/"
+                    target="_blank"
+                    >Voir les défis / Proposer un défi</a
+                  >
                 </div>
               </div>
             </div>
@@ -708,64 +861,81 @@
     <div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-video" data-allowfullscreen="1" data-href="https://www.facebook.com/alsace.digitale/videos/1168785789802934/"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/alsace.digitale/videos/1168785789802934/"><a href="https://www.facebook.com/alsace.digitale/videos/1168785789802934/">Encouragement Gilles Babinet HICamp www.hackingindustry.camp</a><p>#Gift les encouragements de  Gilles Babinet pour le Hacking industry Camp ! On adore.</p>Posted by <a href="https://www.facebook.com/alsace.digitale">Alsace Digitale</a> on Friday, October 2, 2015</blockquote></div></div>
     </div>-->
                     <div class="col-md-12">
-                      <div class="testimonial-slider-row row" style="padding-top: 80px;">
+                      <div
+                        class="testimonial-slider-row row"
+                        style="padding-top: 80px;"
+                      >
                         <div class="col-md-8 col-md-offset-2">
-                          <ul class="testimonial-slider rslides" data-auto="false" data-speed="800" data-timeout="4000">
+                          <ul
+                            class="testimonial-slider rslides"
+                            data-auto="false"
+                            data-speed="800"
+                            data-timeout="4000"
+                          >
                             <!-- TESTIMONIAL ITEM 1 -->
                             <li class="testimonial-slide">
                               <blockquote class="testimonial-quote">
                                 <p>
                                   C'est la troisième révolution industrielle. Je
-                                  défends l'idée qu'il y a eu un changement massif
-                                  de paradigme qui nécessite une culture économique,
-                                  sociale, industrielle différente, qui a bouleversé
-                                  notre économie et l'organisation de la société.
+                                  défends l'idée qu'il y a eu un changement
+                                  massif de paradigme qui nécessite une culture
+                                  économique, sociale, industrielle différente,
+                                  qui a bouleversé notre économie et
+                                  l'organisation de la société.
                                 </p>
                               </blockquote>
-                              <cite class="testimonial-cite">Gilles Babinet, Digital Champion</cite>
+                              <cite class="testimonial-cite"
+                                >Gilles Babinet, Digital Champion</cite
+                              >
                             </li>
                             <!-- TESTIMONIAL ITEM 2 -->
                             <li class="testimonial-slide">
                               <blockquote class="testimonial-quote">
                                 <p>
                                   A mesure que le quotidien s’informatise, se
-                                  numérise, se robotise, l’innovation fait naître,
-                                  assez paradoxalement, une phénoménale bouffée
-                                  collaborative.
+                                  numérise, se robotise, l’innovation fait
+                                  naître, assez paradoxalement, une phénoménale
+                                  bouffée collaborative.
                                 </p>
                               </blockquote>
-                              <cite class="testimonial-cite">Jean Paul Viart, Humanoides</cite>
+                              <cite class="testimonial-cite"
+                                >Jean Paul Viart, Humanoides</cite
+                              >
                             </li>
                             <!-- TESTIMONIAL ITEM 3 -->
                             <li class="testimonial-slide">
                               <blockquote class="testimonial-quote">
                                 <p>
-                                  L'innovation consiste à socialiser des inventions
-                                  technologiques, elles-mêmes issues de découvertes
-                                  scientifiques. Innover, c'est produire du nouveau
-                                  (méthodes, objets, services) pour l'installer sur
-                                  un marché.
+                                  L'innovation consiste à socialiser des
+                                  inventions technologiques, elles-mêmes issues
+                                  de découvertes scientifiques. Innover, c'est
+                                  produire du nouveau (méthodes, objets,
+                                  services) pour l'installer sur un marché.
                                 </p>
                               </blockquote>
-                              <cite class="testimonial-cite">Bernard Stiegler, Ars Industrialis</cite>
+                              <cite class="testimonial-cite"
+                                >Bernard Stiegler, Ars Industrialis</cite
+                              >
                             </li>
                             <!-- TESTIMONIAL ITEM 4 -->
                             <li class="testimonial-slide">
                               <blockquote class="testimonial-quote">
                                 <p>
-                                  Des prévisions réalisées par Cisco indiquent que
-                                  d’ici 2022, l’Internet des Objets générera 14 400
-                                  milliards de dollars en bénéfices et revenus. Une
-                                  autre étude de General Electric publiée en
-                                  novembre 2012 conclut que les gains en efficacité
-                                  et productivité induits par un système industriel
-                                  digitalisé rejailliront sur tous les secteurs
-                                  économiques d’ici 2025, impactant
-                                  approximativement une moitié de l’économie
-                                  globale.
+                                  Des prévisions réalisées par Cisco indiquent
+                                  que d’ici 2022, l’Internet des Objets générera
+                                  14 400 milliards de dollars en bénéfices et
+                                  revenus. Une autre étude de General Electric
+                                  publiée en novembre 2012 conclut que les gains
+                                  en efficacité et productivité induits par un
+                                  système industriel digitalisé rejailliront sur
+                                  tous les secteurs économiques d’ici 2025,
+                                  impactant approximativement une moitié de
+                                  l’économie globale.
                                 </p>
                               </blockquote>
-                              <cite class="testimonial-cite">Jeremy Rifkin, Economiste</cite>
+                              <cite class="testimonial-cite"
+                                >Jeremy Rifkin, Economiste</cite
+                              >
                             </li>
                           </ul>
                         </div>
@@ -841,9 +1011,13 @@
     <!-- TEAM ================================= -->
     <!-- Lundi 17/06/2019 en attente de coachs/jury-->
 
-<!-- Check the visibility of the Coaches zone, if it's visible, show it, else not -->
+    <!-- Check the visibility of the Coaches zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'coaches' && zone.visible === true" class="section" id="coachs">
+      <section
+        v-if="zone.name === 'coaches' && zone.visible === true"
+        class="section"
+        id="coachs"
+      >
         <div class="container">
           <h2 class="section-heading text-center">Les Coachs</h2>
           <div class="team-row row">
@@ -857,12 +1031,16 @@
                           </div>
                       </div>
                   </div>-->
-            <CoachJury :coachjury="coach" v-for="coach in shuffle(coaches)" :key="coach.id" />
+            <CoachJury
+              :coachjury="coach"
+              v-for="coach in shuffle(coaches)"
+              :key="coach.id"
+            />
           </div>
         </div>
       </section>
     </div>
-          <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+    <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member even">
               <img alt="Jérôme LEHMANN" class="team-member-picture" src="images/contents/coach/jerome-lehmann.jpg" />
               <div class="team-member-text" style="padding-bottom: 12px">
@@ -1013,7 +1191,7 @@
           </div>
         </div>
       </div> -->
-      <!--<div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+    <!--<div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member">
                 <img alt="Olivier GROSSE" class="team-member-picture" src="images/contents/coach/olivier-grosse.jpg">
                 <div class="team-member-text">
@@ -1022,7 +1200,7 @@
                 </div>
             </div>
         </div>-->
-      <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+    <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
         <div class="team-member">
           <img alt="Alexis MARTIN" class="team-member-picture" src="images/contents/coach/alexis-martin.jpg" />
           <div class="team-member-text">
@@ -1103,7 +1281,7 @@
           </div>
         </div>
       </div> -->
-        
+
     <!--
     <section class="team-section section" style="padding-top: 0;">
 
@@ -1418,22 +1596,30 @@
     </div>
     </section>
     -->
-<!-- Check the visibility of the Juries zone, if it's visible, show it, else not -->
+    <!-- Check the visibility of the Juries zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'juries' && zone.visible === true" class="section" id="jury">
+      <section
+        v-if="zone.name === 'juries' && zone.visible === true"
+        class="section"
+        id="jury"
+      >
         <div class="container">
           <h2 class="section-heading text-center">Le Jury</h2>
 
           <div class="team-row row">
-  <!-- *-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
+            <!-- *-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* -->
             <!-- <Jury :jury="jury" v-for="jury in shuffle(juries)" :key="jury.id" /> -->
-            <CoachJury :coachjury="jury" v-for="jury in shuffle(juries)" :key="jury.id" />
+            <CoachJury
+              :coachjury="jury"
+              v-for="jury in shuffle(juries)"
+              :key="jury.id"
+            />
             <!-- <Coach :coach="jury" v-for="jury in shuffle(juries)" :key="jury.id" /> -->
           </div>
         </div>
       </section>
     </div>
-          <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
+    <!-- <div class="col-sm-6 col-md-4 col-lg-2" data-animation="fadeIn">
             <div class="team-member">
               <img alt="Michel HUSSHER" class="team-member-picture" src="images/contents/jury/michel-hussherr.jpg" />
               <div class="team-member-text" style="padding-bottom: 30px">
@@ -1505,7 +1691,7 @@
               </div>
             </div>
           </div> -->
-       
+
     <!-- PRICES -->
     <!--
     <section id="prizes" class="section section-dark">
@@ -1629,10 +1815,14 @@
 
     </section> -->
 
-<!-- List of winners -->
-<!-- Check the visibility of the Results zone, if it's visible, show it, else not -->
+    <!-- List of winners -->
+    <!-- Check the visibility of the Results zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'results' && zone.visible === true" id="winners" class="section">
+      <section
+        v-if="zone.name === 'results' && zone.visible === true"
+        id="winners"
+        class="section"
+      >
         <div class="container">
           <h2 class="section-heading text-center">Les résultats</h2>
 
@@ -1641,9 +1831,12 @@
             2020, et 9 d'entre eux ont été primés
           </p>
 
-          <ul class="col-md-8 col-md-offset-2" style="padding-left: 50px; list-style: none; text-align: left">
+          <ul
+            class="col-md-8 col-md-offset-2"
+            style="padding-left: 50px; list-style: none; text-align: left"
+          >
             <li v-for="result in results" :key="result.id">
-              <i class="fa fa-trophy"></i> {{ result.classement }} : 
+              <i class="fa fa-trophy"></i> {{ result.classement }} :
               <a :href="result.link" target="_blank">{{ result.title }}</a>
             </li>
           </ul>
@@ -1651,7 +1844,7 @@
       </section>
     </div>
 
-        <!-- <ul class="col-md-8 col-md-offset-2" style="padding-left: 50px;">
+    <!-- <ul class="col-md-8 col-md-offset-2" style="padding-left: 50px;">
           <li>
             <i class="fa fa-trophy"></i> Premier prix :
             <a href="https://hic2019.sparkboard.com/project/5d5174bccb58c30024e55f8b" target="_blank">
@@ -1691,12 +1884,17 @@
             <a href="https://hic2019.sparkboard.com/project/5d444fe75063e80024d7056a" target="_blank">#3 - "Visu Van"</a>
           </li>
         </ul> -->
-      
-<!-- SPONSORS
+
+    <!-- SPONSORS
 ================================= -->
-<!-- Check the visibility of the Partners zone, if it's visible, show it, else not -->
+    <!-- Check the visibility of the Partners zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'partners' && zone.visible === true" class="section-dark section" id="sponsors" style="padding-bottom: 30px; padding-top: 30px;">
+      <section
+        v-if="zone.name === 'partners' && zone.visible === true"
+        class="section-dark section"
+        id="sponsors"
+        style="padding-bottom: 30px; padding-top: 30px;"
+      >
         <!--<div class="section-background">
 
       <div class="section-background-image parallax" data-stellar-ratio="0.4">
@@ -1709,13 +1907,16 @@
             Partenaires et sponsors
           </h2>
 
-          <PartnerCategory :partnerCategory="partnerCategory" v-for="partnerCategory in partnerCategories" :key="partnerCategory.id" />
-        
+          <PartnerCategory
+            :partnerCategory="partnerCategory"
+            v-for="partnerCategory in partnerCategories"
+            :key="partnerCategory.id"
+          />
         </div>
       </section>
     </div>
 
-        <!-- <div class="sponsors-row" data-animation="bounceIn">
+    <!-- <div class="sponsors-row" data-animation="bounceIn">
           <p style="font-size: 17px;">
             Dans le cadre de son soutien au Hacking Industry Camp, ÉS est partie
             prenante de l'organisation de l'évènement.
@@ -1728,16 +1929,16 @@
           <br />
           <a href="http://www.socomec.fr/Accueil_fr.html" target="_blank"><img alt="Socomec France" src="images/contents/socomec.png" /></a> -->
 
-          <!--<a href="http://www.strasbourg.port.fr/" target="_blank"><img src="../images/contents/pas.png" alt="Port Autonome de Strasbourg"></a>-->
-          <!-- <a href="http://strasbourg.eu/" target="_blank"><img alt="Strasbourg.eu" src="images/contents/banner-stras.png" /></a>
+    <!--<a href="http://www.strasbourg.port.fr/" target="_blank"><img src="../images/contents/pas.png" alt="Port Autonome de Strasbourg"></a>-->
+    <!-- <a href="http://strasbourg.eu/" target="_blank"><img alt="Strasbourg.eu" src="images/contents/banner-stras.png" /></a>
         </div>
         <div class="sponsors-row" data-animation="bounceIn">
           <h3 style="font-size: 17px;">Silver Sponsors</h3>
           <br /> -->
-          <!--<a href="http://www.caisse-epargne.fr/" target="_blank"><img alt="Caisse d'Epargne Alsace" src="images/contents/caisse-epargne.jpg"></a>-->
-          <!--<a href="http://www.hagergroup.com/" target="_blank"><img alt="Hager"
+    <!--<a href="http://www.caisse-epargne.fr/" target="_blank"><img alt="Caisse d'Epargne Alsace" src="images/contents/caisse-epargne.jpg"></a>-->
+    <!--<a href="http://www.hagergroup.com/" target="_blank"><img alt="Hager"
                                                                           src="images/contents/hager-group.png"></a>-->
-          <!-- <a href="http://www.rhenatic.eu/" target="_blank"><img alt="Rhénatic" src="images/contents/rhenatic.png" style="width: 180px;" /></a>
+    <!-- <a href="http://www.rhenatic.eu/" target="_blank"><img alt="Rhénatic" src="images/contents/rhenatic.png" style="width: 180px;" /></a>
 
           <a href="http://www.strataggem.com/" style="background: white; padding: 8px;" target="_blank"><img alt="Strataggem" src="images/contents/strataggem.png" /></a>
 
@@ -1749,9 +1950,9 @@
 
           <a href="https://its-future.com/" target="_blank"><img alt="its future" src="images/contents/its.png" /></a> -->
 
-          <!--<a href="http://www.alsacechampagneardennelorraine.eu/" target="_blank"><img src="images/contents/regiongrandest.png" alt="Région Grand Est"></a>
+    <!--<a href="http://www.alsacechampagneardennelorraine.eu/" target="_blank"><img src="images/contents/regiongrandest.png" alt="Région Grand Est"></a>
     <a href="https://www.interregeurope.eu/" target="_blank"><img src="images/contents/interreg.jpg" alt="Interreg Europe"></a>-->
-        <!-- </div>
+    <!-- </div>
         <div class="sponsors-row" data-animation="bounceIn">
           <h3 style="font-size: 17px;">Bronze Sponsors</h3>
           <br />
@@ -1795,22 +1996,22 @@
 
           <a href="http://www.xfive.be/" target="_blank"><img alt="XFive" src="images/contents/xfive.jpg" /></a> -->
 
-          <!--<a href="http://cpc-analytics.fr" target="_blank"><img alt="Cpc Analytics"
+    <!--<a href="http://cpc-analytics.fr" target="_blank"><img alt="Cpc Analytics"
                                                                        src="images/contents/cpc-analytics.jpg"></a>-->
-          <!-- <a href="http://duipi.unistra.fr/" target="_blank"><img alt="IPI" src="images/contents/ipi.png" /></a> -->
+    <!-- <a href="http://duipi.unistra.fr/" target="_blank"><img alt="IPI" src="images/contents/ipi.png" /></a> -->
 
-          <!--<a href="http://innovationweek.org/france/" target="_blank"><img src="images/contents/innoweek.png" alt="Innoweek"></a>-->
-          <!-- <a href="http://marque.alsace/" target="_blank"><img alt="Marque Alsace" src="images/contents/acoeur.png" /></a>
+    <!--<a href="http://innovationweek.org/france/" target="_blank"><img src="images/contents/innoweek.png" alt="Innoweek"></a>-->
+    <!-- <a href="http://marque.alsace/" target="_blank"><img alt="Marque Alsace" src="images/contents/acoeur.png" /></a>
 
           <a href="http://www.strasbourgaimesesetudiants.eu/" target="_blank"><img alt="Strasbourg aime ses étudiants" src="images/contents/strasbourg-etudiants.png" /></a> -->
 
-          <!--<a href="http://alsacalcul.unistra.fr/" target="_blank"><img alt="Alsa Calcul"
+    <!--<a href="http://alsacalcul.unistra.fr/" target="_blank"><img alt="Alsa Calcul"
                                                                              src="images/contents/alsacalcul.jpg"></a>-->
-          <!-- <a href="http://www.conectus.fr/" target="_blank"><img alt="satt connectus" src="images/contents/satt.png" style="background: white; height: 90px; padding: 5px;" /></a> -->
+    <!-- <a href="http://www.conectus.fr/" target="_blank"><img alt="satt connectus" src="images/contents/satt.png" style="background: white; height: 90px; padding: 5px;" /></a> -->
 
-          <!--<a href="https://www.federation-industries-alsace.com/" target="_blank"><img style="background: white; height: 90px; padding: 5px;" src="images/contents/fia.png" alt="fia"></a>
+    <!--<a href="https://www.federation-industries-alsace.com/" target="_blank"><img style="background: white; height: 90px; padding: 5px;" src="images/contents/fia.png" alt="fia"></a>
     <a href="http://prglobalmedia.com/" target="_blank" style="background: white; padding: 0 5px;"><img src="images/contents/prglobalmedia.png" alt="PR Global Media"></a>-->
-          <!-- <a href="http://http://epitech.eu/" target="_blank"><img alt="Epitech" src="images/contents/epitech.png" style="background: white; height: 90px; padding: 5px;" /></a>
+    <!-- <a href="http://http://epitech.eu/" target="_blank"><img alt="Epitech" src="images/contents/epitech.png" style="background: white; height: 90px; padding: 5px;" /></a>
 
           <a href="http://www.reck.fr/" target="_blank"><img alt="Cafés Reck" src="images/contents/cafe-reck.jpg" /></a>
 
@@ -1829,11 +2030,11 @@
 
           <a href="https://www.strasbourgaimesesetudiants.eu/" target="_blank"><img alt="Strasbourg aime ses étudiants" src="images/contents/strasetudiants.png" width="300" /></a>
           <a href="http://www.espacealpin.fr/" target="_blank"><img alt="Interreg Alpine Space" src="images/contents/interregspace.jpg" width="300" /></a> -->
-          <!-- devient partenaire Lundi 17/06/2019 -->
-          <!-- <a href="https://upperrhine40.eu/" target="_blank"><img alt="" src="images/contents/interreg2018.jpg" /><br /></a> -->
-          <!-- inclus dans upper rhine-->
-        <!-- </div> -->
-        <!--<div class="sponsors-row" data-animation="bounceIn">
+    <!-- devient partenaire Lundi 17/06/2019 -->
+    <!-- <a href="https://upperrhine40.eu/" target="_blank"><img alt="" src="images/contents/interreg2018.jpg" /><br /></a> -->
+    <!-- inclus dans upper rhine-->
+    <!-- </div> -->
+    <!--<div class="sponsors-row" data-animation="bounceIn">
     <h3 style="font-size: 17px;"></h3><br>
     <div class="row">
     <p>Intéressés pour devenir sponsor ?</p>
@@ -1841,16 +2042,24 @@
     <a target="_blank" href="https://drive.google.com/open?id=0B0S2y3rk51DNRnJrRGNRV1h1OUU" class="btn btn-primary">Présentation HIC</a> &nbsp; <a target="_blank" href="https://drive.google.com/open?id=0B0S2y3rk51DNQnJuZldfaFdHMlU" class="btn btn-primary">Devenir sponsor</a>
     </div>
     </div>-->
-      
-<!-- FAQ
+
+    <!-- FAQ
 ================================= -->
-<!-- Check the visibility of the Questions zone, if it's visible, show it, else not -->
+    <!-- Check the visibility of the Questions zone, if it's visible, show it, else not -->
     <div v-for="zone in zones" :key="zone.id">
-      <section v-if="zone.name === 'questions' && zone.visible === true" class="faq-section section" id="faq">
+      <section
+        v-if="zone.name === 'questions' && zone.visible === true"
+        class="faq-section section"
+        id="faq"
+      >
         <div class="container">
           <h2 class="section-heading text-center">Foire aux questions</h2>
           <div class="faq-row row">
-            <div v-for="question in questions" :key="question.id" class="col-md-6 height">
+            <div
+              v-for="question in questions"
+              :key="question.id"
+              class="col-md-6 height"
+            >
               <div class="faq-item">
                 <span class="faq-item-icon fa fa-question-circle"></span>
                 <h4 class="faq-item-heading">{{ question.title }}</h4>
@@ -1861,7 +2070,7 @@
         </div>
       </section>
     </div>
-          <!-- 
+    <!-- 
             <div class="faq-item-text">
                 L'événement est ouvert à tous. Quel que soient votre profil ou
                 vos compétences, vous pouvez prendre part au challenge en
@@ -1919,8 +2128,8 @@
                 Chacun ramène son PC et si possible une multiprise.
                 <br />
                 <br /> -->
-                <!--<strong>Nos partenaires mettent à disposition un kit technique</strong> : <br> - l'INSA permet l'accès à son FabLab.<br>- La startup Strataggem propose l'accès à la plateforme LoRa Wavebricks, a du matériel électronique pour réaliser des objets connectés et du coaching durant le week-end.<br>- ITS Future et AGORA CALYCE mettent à disposition la plateforme cloud IoT Agora.<br> - Scalingo vous permettra d'héberger vos applications web !-->
-              <!-- </div>
+    <!--<strong>Nos partenaires mettent à disposition un kit technique</strong> : <br> - l'INSA permet l'accès à son FabLab.<br>- La startup Strataggem propose l'accès à la plateforme LoRa Wavebricks, a du matériel électronique pour réaliser des objets connectés et du coaching durant le week-end.<br>- ITS Future et AGORA CALYCE mettent à disposition la plateforme cloud IoT Agora.<br> - Scalingo vous permettra d'héberger vos applications web !-->
+    <!-- </div>
             </div>
             <div class="faq-item">
               <span class="faq-item-icon fa fa-question-circle"></span>
@@ -1932,8 +2141,8 @@
                 repas avec la belle-mère, pas de soucis ! Il suffit que vous en
                 informiez votre équipe et que vous vous organisiez
                 collectivement. -->
-                <!--<strong>Nos partenaires mettent à disposition un kit technique</strong> : <br> - l'INSA permet l'accès à son FabLab.<br>- La startup Strataggem propose l'accès à la plateforme LoRa Wavebricks, a du matériel électronique pour réaliser des objets connectés et du coaching durant le week-end.<br>- ITS Future et AGORA CALYCE mettent à disposition la plateforme cloud IoT Agora.<br> - Scalingo vous permettra d'héberger vos applications web !-->
-              <!-- </div>
+    <!--<strong>Nos partenaires mettent à disposition un kit technique</strong> : <br> - l'INSA permet l'accès à son FabLab.<br>- La startup Strataggem propose l'accès à la plateforme LoRa Wavebricks, a du matériel électronique pour réaliser des objets connectés et du coaching durant le week-end.<br>- ITS Future et AGORA CALYCE mettent à disposition la plateforme cloud IoT Agora.<br> - Scalingo vous permettra d'héberger vos applications web !-->
+    <!-- </div>
             </div>
           </div>
           <div class="col-md-6">
@@ -1957,13 +2166,16 @@
               </div>
             </div>
           </div> -->
-        
+
     <!-- CONTACT + MAPS
     ================================= -->
     <section class="contact-maps-section section" id="contact-maps">
       <div class="section-background">
         <!-- MAPS BACKGROUND -->
-        <div class="section-background-maps" style="background-image: url('images/contents/map.jpg')"></div>
+        <div
+          class="section-background-maps"
+          style="background-image: url('images/contents/map.jpg')"
+        ></div>
         <div class="container">
           <div class="contact-maps-row row">
             <div class="col-md-7 col-md-offset-5">
@@ -2008,12 +2220,21 @@
     <a href="https://drive.google.com/open?id=0B0S2y3rk51DNZ1BFNFI4cWFWUjQ2aThUblRBaVl5OWM3RmVv" target="_blank">Dossier de presse</a> -->
         </div>
         <div class="footer-socmed">
-          <a href="http://facebook.com/alsace.digitale" target="_blank"><span class="fa fa-facebook"></span></a>
-          <a href="https://twitter.com/AlsaceDigitale" target="_blank"><span class="fa fa-twitter"></span></a>
+          <a href="http://facebook.com/alsace.digitale" target="_blank"
+            ><span class="fa fa-facebook"></span
+          ></a>
+          <a href="https://twitter.com/AlsaceDigitale" target="_blank"
+            ><span class="fa fa-twitter"></span
+          ></a>
         </div>
         <div class="footer-copyright">
           &copy; 2019
-          <a href="http://www.alsacedigitale.org/" target="_blank" title="Alsace Digitale">Alsace Digitale</a>
+          <a
+            href="http://www.alsacedigitale.org/"
+            target="_blank"
+            title="Alsace Digitale"
+            >Alsace Digitale</a
+          >
           •
           <strong>Précédentes éditions :</strong>
           <a href="http://2015.hackingindustry.camp/" target="_blank">2015</a> -
@@ -2054,7 +2275,7 @@ export default {
     PartnerCategory
     // KeyStep
   },
-  data: function () {
+  data: function() {
     return {
       keynotes: [
         {
@@ -2121,7 +2342,7 @@ export default {
       // ]
     };
   },
-  mounted: function () {
+  mounted: function() {
     console.log(api.getApiRoot());
     console.log(api.getProcessEnv());
     api.getKeynotes().then(resp => {
@@ -2156,7 +2377,7 @@ export default {
     // });
   },
   methods: {
-    shuffle: function (arr) {
+    shuffle: function(arr) {
       let i, j, temp;
       for (i = arr.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -2164,19 +2385,19 @@ export default {
         arr[i] = arr[j];
         arr[j] = temp;
       }
-      return arr;    
+      return arr;
     }
   }
 };
 </script>
 
 <style scoped>
+.height {
+  height: 25vh;
+}
+@media screen and (max-width: 992px) {
   .height {
-    height: 25vh;
+    height: auto;
   }
-  @media screen and (max-width: 992px) {
-    .height {
-      height: auto;
-  }
-  }
+}
 </style>
