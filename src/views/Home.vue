@@ -1,53 +1,24 @@
 <template>
   <div class="document" id="document">
     <!-- HEADER ======================================= -->
-    <Navbar
-      :process="process"
-      :keynote="keynote"
-      :planning="planning"
-      :result="result"
-      :partner="partner"
-      :question="question"
-    />
+    <Navbar :process="process" :keynote="keynote" :planning="planning" :result="result" :partner="partner" :question="question" />
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
     <!-- <Navbar :maskableblocks="maskableblocks" /> -->
     <!-- </MaskableBlock> -->
 
     <div class="blog-sticky-logo">
       <a href="http://alsacedigitale.org" target="_blank">
-        <img
-          alt="logo alsacedigitale"
-          src="images/logos/AD-logo-132x132.png"
-          title="par AlsaceDigitale"
-        />
+        <img alt="logo alsacedigitale" src="images/logos/AD-logo-132x132.png" title="par AlsaceDigitale" />
       </a>
       <div style="font-size: 1.5em; margin-top: -12px; margin-right: 4px">
-        <a
-          style="color: #FF0000; margin-right: 4px"
-          href="https://www.youtube.com/playlist?list=PLyFRNlGSj8FifzMpq2l_8rqr_PhVoH32R"
-          target="_blank"
-          ><i class="fab fa-youtube logoSize"></i
-        ></a>
-        <a
-          style="color: #3b5998; margin-right: 4px"
-          href="https://www.facebook.com/alsace.digitale/"
-          target="_blank"
-          ><i class="fab fa-facebook logoSize"></i
-        ></a>
-        <a
-          style="color: #1DA1F2"
-          href="https://twitter.com/AlsaceDigitale"
-          target="_blank"
-          ><i class="fab fa-twitter logoSize"></i
-        ></a>
+        <a style="color: #FF0000; margin-right: 4px" href="https://www.youtube.com/playlist?list=PLyFRNlGSj8FifzMpq2l_8rqr_PhVoH32R" target="_blank"><i class="fab fa-youtube logoSize"></i></a>
+        <a style="color: #3b5998; margin-right: 4px" href="https://www.facebook.com/alsace.digitale/" target="_blank"><i class="fab fa-facebook logoSize"></i></a>
+        <a style="color: #1DA1F2" href="https://twitter.com/AlsaceDigitale" target="_blank"><i class="fab fa-twitter logoSize"></i></a>
       </div>
     </div>
 
     <!-- ANNOUNCES ==================================== -->
-    <section
-      class="headline-section section-accent section"
-      style="padding: 0; margin-top: 2.5vh"
-    >
+    <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
@@ -68,11 +39,7 @@
     <!-- PROCESS , KEYSTEPS , HACKATHON =============== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
     <!-- Processes -->
-    <MaskableBlock
-      blockId="process"
-      :zoneName="process"
-      @zoneVisibility="process = $event"
-    >
+    <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event">
       <section id="process">
         <div class="container">
           <h1 class="hero-title" style="margin-bottom: 0">
@@ -91,20 +58,11 @@
         <!-- v-if="process.title != 'Hackathon' && process.title != 'Post'" -->
         <!-- KeySteps -->
         <!-- Define the section correspond to "key step" automatically -->
-        <div
-          v-for="process in processes"
-          :key="process.id"
-          style="border-top: 1px solid #444"
-        >
-          <div
-            v-if="
+        <div v-for="process in processes" :key="process.id" style="border-top: 1px solid #444">
+          <div v-if="
               process.title !== 'Hackathon' &&
                 process.title !== 'Post Hackathon'
-            "
-            :style="{ backgroundColor: process.backgroundColor }"
-            class="section"
-            :id="process.title"
-          >
+            " :style="{ backgroundColor: process.backgroundColor }" class="section" :id="process.title">
             <!-- class="section section-dark"  -->
             <!-- <div v-if="process.priority != 1"><hr></div> -->
             <div class="container">
@@ -112,43 +70,24 @@
               <p v-if="process.stepIntroduction" style="margin-bottom: 10px">
                 {{ process.stepIntroduction }}
               </p>
-              <p
-                v-if="process.stepOrder"
-                style="margin-top: 0; margin-bottom: 30px"
-              >
+              <p v-if="process.stepOrder" style="margin-top: 0; margin-bottom: 30px">
                 {{ process.stepOrder }}
               </p>
 
               <div class="row">
-                <Keynote
-                  :keynote="keystep"
-                  v-for="keystep in process.keysteps"
-                  :key="keystep.id"
-                />
+                <Keynote :keynote="keystep" v-for="keystep in process.keysteps" :key="keystep.id" />
               </div>
 
-              <p
-                v-if="process.stepDescription"
-                style="margin-bottom: 10px; margin-top: 20px"
-              >
+              <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">
                 {{ process.stepDescription }}
               </p>
               <p v-if="process.stepContact">
-                <a
-                  href="mailto:contact@alsacedigitale.org"
-                  style="cursor: pointer"
-                  >{{ process.stepContact }}</a
-                >
+                <a href="mailto:contact@alsacedigitale.org" style="cursor: pointer">{{ process.stepContact }}</a>
               </p>
               <!-- <p v-if="process.stepContact">{{ process.stepContact }}  <a style="cursor: pointer" data-toggle="modal" :data-target="'#' + process.priority"> Contactez-nous</a></p> -->
             </div>
           </div>
-          <div
-            v-else-if="process.title === 'Hackathon'"
-            :id="process.title"
-            class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark"
-            style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;"
-          >
+          <div v-else-if="process.title === 'Hackathon'" :id="process.title" class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark" style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
             <Hackathon />
           </div>
 
@@ -197,11 +136,7 @@
         <div class="hiw-row row">
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item">
-              <img
-                alt="le pitch"
-                class="hiw-item-picture"
-                src="images/contents/how1.jpg"
-              />
+              <img alt="le pitch" class="hiw-item-picture" src="images/contents/how1.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">1</span>
                 <h4 class="hiw-item-title">Le Pitch</h4>
@@ -215,11 +150,7 @@
           <!-- HOW IT WORKS - ITEM 2 -->
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item even">
-              <img
-                alt="le choix des projets"
-                class="hiw-item-picture"
-                src="images/contents/how2.jpg"
-              />
+              <img alt="le choix des projets" class="hiw-item-picture" src="images/contents/how2.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">2</span>
                 <h4 class="hiw-item-title">Le choix des projets</h4>
@@ -234,11 +165,7 @@
           <!-- HOW IT WORKS - ITEM 3 -->
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item">
-              <img
-                alt="la construction"
-                class="hiw-item-picture"
-                src="images/contents/how3.jpg"
-              />
+              <img alt="la construction" class="hiw-item-picture" src="images/contents/how3.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">3</span>
                 <h4 class="hiw-item-title">La construction</h4>
@@ -251,11 +178,7 @@
           <!-- HOW IT WORKS - ITEM 4 -->
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item even">
-              <img
-                alt="présentation finale"
-                class="hiw-item-picture"
-                src="images/contents/how4.jpg"
-              />
+              <img alt="présentation finale" class="hiw-item-picture" src="images/contents/how4.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">4</span>
                 <h4 class="hiw-item-title">La présentation finale</h4>
@@ -272,22 +195,11 @@
 
     <!-- KEYNOTES ===================================== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock
-      blockId="keynote"
-      :zoneName="keynote"
-      @zoneVisibility="keynote = $event"
-    >
+    <MaskableBlock blockId="keynote" :zoneName="keynote" @zoneVisibility="keynote = $event">
       <section class="section section-dark" id="keynotes">
         <div class="section-background">
-          <div
-            class="section-background-image parallax"
-            data-stellar-ratio="0.4"
-          >
-            <img
-              alt=""
-              src="images/backgrounds/background-keynote-hic.jpg"
-              style="opacity: 0.08;"
-            />
+          <div class="section-background-image parallax" data-stellar-ratio="0.4">
+            <img alt="" src="images/backgrounds/background-keynote-hic.jpg" style="opacity: 0.08;" />
           </div>
         </div>
         <div class="container">
@@ -299,57 +211,28 @@
           </p>
 
           <div class="row">
-            <Keynote
-              :keynote="keynote"
-              v-for="keynote in keynotes"
-              :key="keynote.id"
-            />
+            <Keynote :keynote="keynote" v-for="keynote in keynotes" :key="keynote.id" />
           </div>
 
           <div style="margin-top: 30px">
-            <a
-              class="btn btn-primary"
-              href="https://www.eventbrite.fr/o/alsace-digitale-3770132475"
-              target="_blank"
-              >M'inscrire aux Keynotes</a
-            >
+            <a class="btn btn-primary" href="https://www.eventbrite.fr/o/alsace-digitale-3770132475" target="_blank">M'inscrire aux Keynotes</a>
             <!-- <a href="https://www.facebook.com/alsace.digitale/" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="25px"/></a>
             <a href="https://twitter.com/AlsaceDigitale" target="_blank" style="margin-left: 20px"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="25px"/></a> -->
           </div>
           <div style="margin-top: 10px">
-            <a
-              href="https://www.youtube.com/user/LaPlageDigitale/playlists"
-              target="_blank"
-              ><img
-                src="https://img.icons8.com/fluent/48/000000/youtube-play.png"
-                width="25px"
-                style="margin-right: 10px; margin-top: -4px"
-              />Retrouvez les videos des conferences précédentes sur Youtube</a
-            >
+            <a href="https://www.youtube.com/user/LaPlageDigitale/playlists" target="_blank"><img src="https://img.icons8.com/fluent/48/000000/youtube-play.png" width="25px" style="margin-right: 10px; margin-top: -4px" />Retrouvez les videos des conferences précédentes sur Youtube</a>
           </div>
         </div>
       </section>
     </MaskableBlock>
 
     <!-- The Planning ================================= -->
-    <MaskableBlock
-      blockId="planning"
-      :zoneName="planning"
-      @zoneVisibility="planning = $event"
-    >
+    <MaskableBlock blockId="planning" :zoneName="planning" @zoneVisibility="planning = $event">
       <section class="section" id="planning">
         <div class="container">
           <div class="row">
-            <div
-              class="col-md-6 col-md-offset-3 closing-buttons"
-              data-animation="tada"
-            >
-              <a
-                class="btn btn-lg btn-primary"
-                href="planning.pdf"
-                target="_blank"
-                >Consulter le planning complet</a
-              >
+            <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
+              <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a>
             </div>
             <div class="col-md-6">
               <h3 class="closing-shout">
@@ -357,12 +240,7 @@
                 inscrire !
               </h3>
               <div class="closing-buttons" data-animation="tada">
-                <a
-                  class="btn btn-lg btn-primary"
-                  href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103"
-                  target="_blank"
-                  >J'y vais !</a
-                >
+                <a class="btn btn-lg btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" target="_blank">J'y vais !</a>
               </div>
             </div>
             <div class="col-md-6">
@@ -371,12 +249,7 @@
                 pouvez également proposer le vôtre !
               </h3>
               <div class="closing-buttons" data-animation="tada">
-                <a
-                  class="btn btn-lg btn-primary"
-                  href="https://hic2021.sparkboard.com/"
-                  target="_blank"
-                  >Voir les défis / Proposer un défi</a
-                >
+                <a class="btn btn-lg btn-primary" href="https://hic2021.sparkboard.com/" target="_blank">Voir les défis / Proposer un défi</a>
               </div>
             </div>
           </div>
@@ -390,11 +263,7 @@
         <div class="container">
           <h2 class="section-heading text-center">Les Coachs</h2>
           <div class="team-row row">
-            <CoachJury
-              :coachjury="coach"
-              v-for="coach in shuffle(coaches)"
-              :key="coach.id"
-            />
+            <CoachJury :coachjury="coach" v-for="coach in shuffle(coaches)" :key="coach.id" />
           </div>
         </div>
       </section>
@@ -406,22 +275,14 @@
         <div class="container">
           <h2 class="section-heading text-center">Le Jury</h2>
           <div class="team-row row">
-            <CoachJury
-              :coachjury="jury"
-              v-for="jury in shuffle(juries)"
-              :key="jury.id"
-            />
+            <CoachJury :coachjury="jury" v-for="jury in shuffle(juries)" :key="jury.id" />
           </div>
         </div>
       </section>
     </MaskableBlock>
 
     <!-- RESULT ====================================== -->
-    <MaskableBlock
-      blockId="result"
-      :zoneName="result"
-      @zoneVisibility="result = $event"
-    >
+    <MaskableBlock blockId="result" :zoneName="result" @zoneVisibility="result = $event">
       <section id="winners" class="section">
         <div class="container">
           <h2 class="section-heading text-center">Les résultats</h2>
@@ -430,15 +291,10 @@
             2020, et 9 d'entre eux ont été primés
           </p>
           <!-- Putting the list of winners in two part : -->
-          <ul
-            class="col-md-12"
-            style="padding-left: 50px; list-style: none; text-align: left"
-          >
+          <ul class="col-md-12" style="padding-left: 50px; list-style: none; text-align: left">
             <li v-for="result in results" :key="result.id" class="winner">
               <!-- The first part for the order -->
-              <div
-                class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6"
-              >
+              <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6">
                 <i class="fa fa-trophy"></i> {{ result.classement }} :
               </div>
               <!-- The second for the prize -->
@@ -452,42 +308,23 @@
     </MaskableBlock>
 
     <!-- POST HACKATHON ============================== -->
-    <MaskableBlock
-      blockId="process"
-      :zoneName="process"
-      @zoneVisibility="process = $event"
-    >
+    <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event">
       <section v-for="process in processes" :key="process.id">
-        <div
-          v-if="process.title === 'Post Hackathon'"
-          :style="{ backgroundColor: process.backgroundColor }"
-          class="section"
-          :id="process.title"
-        >
+        <div v-if="process.title === 'Post Hackathon'" :style="{ backgroundColor: process.backgroundColor }" class="section" :id="process.title">
           <div class="container">
             <h1 class="section-heading text-center">{{ process.title }}</h1>
             <p v-if="process.stepIntroduction" style="margin-bottom: 10px">
               {{ process.stepIntroduction }}
             </p>
-            <p
-              v-if="process.stepOrder"
-              style="margin-top: 0; margin-bottom: 30px"
-            >
+            <p v-if="process.stepOrder" style="margin-top: 0; margin-bottom: 30px">
               {{ process.stepOrder }}
             </p>
 
             <div class="row">
-              <Keynote
-                :keynote="keystep"
-                v-for="keystep in process.keysteps"
-                :key="keystep.order"
-              />
+              <Keynote :keynote="keystep" v-for="keystep in process.keysteps" :key="keystep.order" />
             </div>
 
-            <p
-              v-if="process.stepDescription"
-              style="margin-bottom: 10px; margin-top: 20px"
-            >
+            <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">
               {{ process.stepDescription }}
             </p>
             <p v-if="process.stepContact">
@@ -509,17 +346,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-12">
-                  <div
-                    class="testimonial-slider-row row"
-                    style="padding-top: 80px;"
-                  >
+                  <div class="testimonial-slider-row row" style="padding-top: 80px;">
                     <div class="col-md-8 col-md-offset-2">
-                      <ul
-                        class="testimonial-slider rslides"
-                        data-auto="false"
-                        data-speed="800"
-                        data-timeout="4000"
-                      >
+                      <ul class="testimonial-slider rslides" data-auto="false" data-speed="800" data-timeout="4000">
                         <!-- TESTIMONIAL ITEM 1 -->
                         <li class="testimonial-slide">
                           <blockquote class="testimonial-quote">
@@ -531,9 +360,7 @@
                               notre économie et l'organisation de la société.
                             </p>
                           </blockquote>
-                          <cite class="testimonial-cite"
-                            >Gilles Babinet, Digital Champion</cite
-                          >
+                          <cite class="testimonial-cite">Gilles Babinet, Digital Champion</cite>
                         </li>
                         <!-- TESTIMONIAL ITEM 2 -->
                         <li class="testimonial-slide">
@@ -545,9 +372,7 @@
                               collaborative.
                             </p>
                           </blockquote>
-                          <cite class="testimonial-cite"
-                            >Jean Paul Viart, Humanoides</cite
-                          >
+                          <cite class="testimonial-cite">Jean Paul Viart, Humanoides</cite>
                         </li>
                         <!-- TESTIMONIAL ITEM 3 -->
                         <li class="testimonial-slide">
@@ -560,9 +385,7 @@
                               un marché.
                             </p>
                           </blockquote>
-                          <cite class="testimonial-cite"
-                            >Bernard Stiegler, Ars Industrialis</cite
-                          >
+                          <cite class="testimonial-cite">Bernard Stiegler, Ars Industrialis</cite>
                         </li>
                         <!-- TESTIMONIAL ITEM 4 -->
                         <li class="testimonial-slide">
@@ -580,9 +403,7 @@
                               globale.
                             </p>
                           </blockquote>
-                          <cite class="testimonial-cite"
-                            >Jeremy Rifkin, Economiste</cite
-                          >
+                          <cite class="testimonial-cite">Jeremy Rifkin, Economiste</cite>
                         </li>
                       </ul>
                     </div>
@@ -597,46 +418,26 @@
 
     <!-- PARTNER ===================================== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock
-      blockId="partner"
-      :zoneName="partner"
-      @zoneVisibility="partner = $event"
-    >
-      <section
-        class="section-dark section"
-        id="sponsors"
-        style="padding-bottom: 30px; padding-top: 30px;"
-      >
+    <MaskableBlock blockId="partner" :zoneName="partner" @zoneVisibility="partner = $event">
+      <section class="section-dark section" id="sponsors" style="padding-bottom: 30px; padding-top: 30px;">
         <div class="container">
           <h2 class="section-heading text-center hidden">
             Partenaires et sponsors
           </h2>
 
-          <PartnerCategory
-            :partnerCategory="partnerCategory"
-            v-for="partnerCategory in partnerCategories"
-            :key="partnerCategory.id"
-          />
+          <PartnerCategory :partnerCategory="partnerCategory" v-for="partnerCategory in partnerCategories" :key="partnerCategory.id" />
         </div>
       </section>
     </MaskableBlock>
 
     <!-- FAQ ========================================= -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock
-      blockId="question"
-      :zoneName="question"
-      @zoneVisibility="question = $event"
-    >
+    <MaskableBlock blockId="question" :zoneName="question" @zoneVisibility="question = $event">
       <section class="faq-section section" id="faq">
         <div class="container">
           <h2 class="section-heading text-center">Foire aux questions</h2>
           <div class="faq-row row text-left">
-            <div
-              v-for="question in questions"
-              :key="question.id"
-              class="col-md-6 height"
-            >
+            <div v-for="question in questions" :key="question.id" class="col-md-6 height">
               <div class="faq-item">
                 <span class="faq-item-icon fa fa-question-circle"></span>
                 <h4 class="faq-item-heading">{{ question.title }}</h4>
@@ -694,18 +495,9 @@
           <a href="https://twitter.com/AlsaceDigitale" target="_blank"><span class="fa fa-twitter"></span></a>
         </div> -->
         <div class="footer-copyright">
-          <a
-            href="https://digitalescapegame.osc-fr1.scalingo.io/mentions-legales/"
-            target="_blank"
-            >Mentions Légales</a
-          >
+          <a href="https://digitalescapegame.osc-fr1.scalingo.io/mentions-legales/" target="_blank">Mentions Légales</a>
           &copy; 2020
-          <a
-            href="http://www.alsacedigitale.org/"
-            target="_blank"
-            title="Alsace Digitale"
-            >Alsace Digitale</a
-          >
+          <a href="http://www.alsacedigitale.org/" target="_blank" title="Alsace Digitale">Alsace Digitale</a>
           •
           <strong>Précédentes éditions :</strong>
           <a href="http://2015.hackingindustry.camp/" target="_blank">2015</a> -
@@ -774,7 +566,7 @@ export default {
     MaskableBlock
     // KeyStep
   },
-  data: function() {
+  data: function () {
     return {
       keynotes: [
         {
@@ -844,13 +636,7 @@ export default {
       question: true
     };
   },
-<<<<<<< HEAD
-  mounted: function() {
-    console.log(api.getApiRoot());
-    console.log(api.getProcessEnv());
-=======
   mounted: function () {
->>>>>>> 30c4bb7530e11428fec9ef344e9d02558f9f6fc2
     api.getKeynotes().then(resp => {
       this.keynotes = resp.data;
     });
@@ -887,7 +673,7 @@ export default {
     // });
   },
   methods: {
-    shuffle: function(arr) {
+    shuffle: function (arr) {
       let i, j, temp;
       for (i = arr.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -897,7 +683,7 @@ export default {
       }
       return arr;
     },
-    checkVisibility: function(zoneName) {
+    checkVisibility: function (zoneName) {
       let zone = this.maskableblocks.find(element => element.name === zoneName);
       if (zone !== undefined) {
         if (zone.visible === true) {
