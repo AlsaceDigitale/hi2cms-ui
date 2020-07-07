@@ -2,8 +2,6 @@ import axios from "axios";
 
 let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.24:1337/";
 let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "";
-// let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.34:1337/";
-// let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "http://192.168.0.34:1337";
 
 export const HTTP = axios.create({
   baseURL: baseURL

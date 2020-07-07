@@ -844,9 +844,13 @@ export default {
       question: true
     };
   },
+<<<<<<< HEAD
   mounted: function() {
     console.log(api.getApiRoot());
     console.log(api.getProcessEnv());
+=======
+  mounted: function () {
+>>>>>>> 30c4bb7530e11428fec9ef344e9d02558f9f6fc2
     api.getKeynotes().then(resp => {
       this.keynotes = resp.data;
     });
