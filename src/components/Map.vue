@@ -1,17 +1,11 @@
 <template>
-  <div style="height: 500px; width: 100%">
-    <l-map
-      :zoom="zoom"
-      :center="center"
-      :options="mapOptions"
-      @update:center="centerUpdate"
-      @update:zoom="zoomUpdate"
-    >
+  <div style="height: 500px; width: 100%" v-if="location">
+    <l-map :zoom="zoom" :center="getMarkerPos()" :options="mapOptions" @update:center="centerUpdate" @update:zoom="zoomUpdate">
       <l-tile-layer :url="url" :attribution="attribution" />
-      <l-marker :lat-lng="withTooltip">
+      <l-marker :lat-lng="getMarkerPos()" v-if="location.latitude">
         <l-tooltip :options="{ permanent: true, interactive: true }">
           <div>
-            Télécom Physique Strasbourg
+            {{ location.name }}
           </div>
         </l-tooltip>
       </l-marker>
@@ -42,25 +36,37 @@ export default {
     LMarker,
     LTooltip
   },
-  data() {
+  data () {
     return {
       zoom: 17,
-      center: latLng(48.526102, 7.737071),
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors',
-      withTooltip: latLng(48.526102, 7.737071),
       mapOptions: {
         zoomSnap: 0.5
       }
     };
   },
   methods: {
-    zoomUpdate(zoom) {
+    zoomUpdate (zoom) {
       this.currentZoom = zoom;
     },
-    centerUpdate(center) {
+    centerUpdate (center) {
       this.currentCenter = center;
+    },
+    getMarkerPos () {
+      if (this.location) {
+        return latLng(this.location.latitude, this.location.longitude);
+      } else {
+        return latLng(0.0, 0.0);
+      }
+    },
+    mounted: function () {
+      this.center = latLng(this.location.latitude, this.location.longitude);
+      this.withTooltip = latLng(
+        this.location.latitude,
+        this.location.longitude
+      );
     }
   }
 };
