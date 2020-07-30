@@ -45,7 +45,7 @@
           </div>
         </div>
         <!-- Show the date & the hours of the event -->
-        <div class="dateGray">
+        <div v-if="keynote.startTime !== null" class="dateGray">
           {{ keynote.startTime | frStartTimeFormat1 | capitalize }}<br />
           <span style="float: right">{{
             keynote.startTime | frStartTimeFormat2
@@ -120,7 +120,7 @@
           </div>
         </div>
         <!-- Show the date & the hours of the event -->
-        <div class="date">
+        <div v-if="keynote.startTime !== null" class="date">
           {{ keynote.startTime | frStartTimeFormat1 | capitalize }}<br />
           <span style="float: right">{{
             keynote.startTime | frStartTimeFormat2
