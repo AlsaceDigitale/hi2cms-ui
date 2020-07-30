@@ -7,9 +7,12 @@
   >
     <slide v-for="(announce, indx) in announces" :key="indx" :index="indx">
       <div v-if="announce.enabled">
-        <div style="position: relative">
+        <div v-if="announce.thumbnail !== null" style="position: relative">
           <img :alt="announce.title" :src="thumbUrl(announce)" width="100%" />
           <h3 class="title">{{ announce.title }}</h3>
+        </div>
+        <div v-else>
+          <h3 class="titleWithoutImg">{{ announce.title }}</h3>
         </div>
 
         <!-- <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%"/> -->
@@ -91,11 +94,18 @@ export default {
   padding-top: 4px;
   padding-bottom: 4px;
 }
+.titleWithoutImg {
+  margin-top: 70px;
+}
 
 @media screen and (max-width: 576px) {
   .title {
     font-size: 1.2em;
     top: 30%;
+  }
+  .titleWithoutImg {
+    font-size: 1.2em;
+    margin-top: 57px;
   }
 }
 /* @media screen and (min-width: 768px) {
