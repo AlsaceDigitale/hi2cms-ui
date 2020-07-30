@@ -1,5 +1,8 @@
 import axios from "axios";
 
+// let baseURL = process.env["VUE_APP_API_ROOT"] || "http://localhost:1337/";
+// let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "http://localhost:1337";
+
 let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.24:1337/";
 let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "";
 
@@ -24,7 +27,7 @@ export default {
     return HTTP.get("/juries");
   },
   getAnnounces: function() {
-    return HTTP.get("/announces");
+    return HTTP.get("/announces?enabled=true");
   },
   getProcesses: function() {
     return HTTP.get("/processes?_sort=priority:ASC");
@@ -43,6 +46,9 @@ export default {
   },
   getLocation: function() {
     return HTTP.get("/location");
+  },
+  getPlanningPDF: function() {
+    return HTTP.get("/pdfplanning");
   },
   // getKeySteps: function () {
   //     return HTTP.get("/keysteps");
