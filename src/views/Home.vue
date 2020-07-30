@@ -6,7 +6,7 @@
     <!-- <Navbar :maskableblocks="maskableblocks" /> -->
     <!-- </MaskableBlock> -->
 
-    <div class="blog-sticky-logo">
+    <div class="blog-sticky-logo" style="z-index: 1100">
       <a href="http://alsacedigitale.org" target="_blank">
         <img alt="logo alsacedigitale" src="images/logos/AD-logo-132x132.png" title="par AlsaceDigitale" />
       </a>
@@ -18,23 +18,47 @@
     </div>
 
     <!-- ANNOUNCES ==================================== -->
-    <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <!-- <h3 class="text-center">
-              L'édition 2019 est déjà terminée, mais ce n'est que le début pour
-              vos projets !
-            </h3> -->
-            <Announce :announces="announces" />
+    <MaskableBlock blockId="announce">
+      <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <!-- <h3 class="text-center">
+                L'édition 2019 est déjà terminée, mais ce n'est que le début pour
+                vos projets !
+              </h3> -->
+              <!-- if the length of the array of the Announces is bigger then 1, apply the Carousel-->
+              <div v-if="announces.length > 1">
+                <Announce :announces="announces" />
+              </div>
+              <!-- if the length of the array of the Announces = 1, then just showing the announce -->
+              <div v-else-if="announces.length === 1" style="height: 25vh">
+                <!-- check if there is image added -->
+                <div v-if="announces[0].thumbnail !== null" style="position: relative">
+                  <img :alt="announces[0].title" :src="thumbUrl(announces[0])" width="100%" />
+                  <h3 class="title">{{ announces[0].title }}</h3>
+                </div>
+                <div v-else>
+                  <h3 class="titleWithoutImg">{{ announces[0].title }}</h3>
+                </div>
+              </div>
+              <!-- <div v-else-if="announces.length === 1">
+                <div v-if="announces[0].enabled">
+                  <div style="position: relative">
+                    <img :alt="announces[0].title" :src="thumbUrl(announces[0])" width="100%" />
+                    <h3 class="title">{{ announces[0].title }}</h3>
+                  </div>
+                </div>
+              </div> -->
 
-            <!-- <div class="closing-buttons tada animated done-animation" target="_blank" data-animation="tada">
-              <a href="https://medium.com/@AlsaceDigitale/en-direct-live-du-hacking-industry-camp-2019-cc06732d6491 " class="btn btn-lg btn-primary">REVIVRE L'EVENEMENT</a>
-            </div> -->
+              <!-- <div class="closing-buttons tada animated done-animation" target="_blank" data-animation="tada">
+                <a href="https://medium.com/@AlsaceDigitale/en-direct-live-du-hacking-industry-camp-2019-cc06732d6491 " class="btn btn-lg btn-primary">REVIVRE L'EVENEMENT</a>
+              </div> -->
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </MaskableBlock>
 
     <!-- PROCESS , KEYSTEPS , HACKATHON =============== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
@@ -232,7 +256,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
-              <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a>
+              <!-- <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a> -->
+              <a class="btn btn-lg btn-primary" :href="pdfUrl(planningPDF)" target="_blank">Consulter le planning complet</a>
             </div>
             <div class="col-md-6">
               <h3 class="closing-shout">
@@ -594,8 +619,7 @@ export default {
       ],
       announces: [
         {
-          title: "titre",
-          subTitle: "sous-titre"
+          title: "titre"
         }
       ],
       processes: [
@@ -627,6 +651,9 @@ export default {
       ],
       location: {
         title: "TPS"
+      },
+      planningPDF: {
+        title: "planning"
       },
       process: true,
       keynote: true,
@@ -667,7 +694,9 @@ export default {
     api.getLocation().then(resp => {
       this.location = resp.data;
     });
-
+    api.getPlanningPDF().then(resp => {
+      this.planningPDF = resp.data;
+    });
     // api.getKeySteps().then(resp => {
     //   this.keysteps = resp.data;
     // });
@@ -695,6 +724,16 @@ export default {
         }
       }
       return false;
+    },
+    thumbUrl: function(announce) {
+      if (announce.thumbnail != null) {
+        return api.getMediaRoot() + announce.thumbnail.url;
+      }
+    },
+    pdfUrl: function(filePDF) {
+      if (filePDF.file[0].url != null) {
+        return api.getMediaRoot() + filePDF.file[0].url;
+      }
     }
     // return this.maskableblocks.filter((element) => {
     //   if(element.name.match(zoneName)) {
@@ -732,6 +771,37 @@ export default {
 @media screen and (max-width: 991px) {
   .winner {
     margin-bottom: 5px;
+  }
+}
+
+.title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.3em;
+  color: #dddddd !important;
+  /* background-color: rgb(10,10,10,0.8);  */
+  padding: 10px;
+  width: fit-content;
+  height: auto;
+}
+.buttonSize {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.titleWithoutImg {
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 1.2em;
+    top: 30%;
+  }
+  .titleWithoutImg {
+    font-size: 1.2em;
+    margin-top: 57px;
   }
 }
 </style>
