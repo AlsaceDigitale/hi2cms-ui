@@ -43,7 +43,8 @@ export default {
       attribution:
         '&copy; <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors',
       mapOptions: {
-        zoomSnap: 0.5
+        zoomSnap: 0.5,
+        scrollWheelZoom: false
       }
     };
   },
