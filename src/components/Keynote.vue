@@ -67,7 +67,7 @@
         type="button"
         class="btn btn-primary buttonSize"
         data-toggle="modal"
-        :data-target="'#' + keynote.name"
+        :data-target="'#' + keynote.id"
       >
         Description
       </button>
@@ -142,7 +142,7 @@
         type="button"
         class="btn btn-primary buttonSize"
         data-toggle="modal"
-        :data-target="'#' + keynote.name"
+        :data-target="'#' + keynote.id"
       >
         Description
       </button>
@@ -167,10 +167,10 @@
       </div>
     </div>
 
-    <!-- ***** Show the Modal when user clicked the buttons of the description **** *** ** * -->
+    <!-- ***** Show the Modal when user has clicked the buttons of the description **** *** ** * -->
     <div
       class="modal fade"
-      :id="keynote.name"
+      :id="keynote.id"
       tabindex="-1"
       role="dialog"
       aria-labelledby="keynoteModalCenterTitle"
@@ -211,7 +211,7 @@
               <em class="small">Interlocuteur : {{ keynote.speaker }}</em>
             </div>
             <!-- Show the date & the hours of the event -->
-            <div
+            <div v-if="keynote.startTime !== null"
               style="color: #222222; text-align: left; font-weight: bold; padding-left: 5px"
             >
               Date : {{ keynote.startTime | frStartTimeFormat | capitalize }}
