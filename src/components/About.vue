@@ -93,6 +93,8 @@
 
 <script>
 export default {
-  name: "Hackathon"
+  // name: "Hackathon"
+  name: "About"
+
 };
 </script>
