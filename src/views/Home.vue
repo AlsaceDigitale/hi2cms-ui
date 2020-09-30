@@ -36,10 +36,10 @@
                 <!-- check if there is image added -->
                 <div v-if="announces[0].thumbnail !== null" style="position: relative">
                   <img :alt="announces[0].title" :src="thumbUrl(announces[0])" width="100%" />
-                  <h3 class="title">{{ announces[0].title }}</h3>
+                  <h3 class="content">{{ announces[0].content }}</h3>
                 </div>
                 <div v-else>
-                  <h3 class="titleWithoutImg">{{ announces[0].title }}</h3>
+                  <h3 class="contentWithoutImg">{{ announces[0].content }}</h3>
                 </div>
               </div>
               <!-- <div v-else-if="announces.length === 1">
@@ -63,10 +63,11 @@
     <!-- PROCESS , KEYSTEPS , HACKATHON =============== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
     <!-- Processes -->
-    <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event">
+    <!-- <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event"> -->
+    <MaskableBlock blockId="process" @zoneVisibility="process = $event">
       <section id="process">
         <div class="container">
-          <h1 class="hero-title" style="margin-bottom: 0">
+          <h1 class="hero-title" style="margin-bottom: 0; margin-top: 50px">
             Hacking Industry Camp
           </h1>
           <h3 style="margin-top: 0">LES ÉTAPES CLÉS</h3>
@@ -85,7 +86,7 @@
         <div v-for="process in processes" :key="process.id" style="border-top: 1px solid #444">
           <div v-if="
               process.title !== 'Hackathon' &&
-                process.title !== 'Post Hackathon'
+              process.title !== 'Post Hackathon'
             " :style="{ backgroundColor: process.backgroundColor }" class="section" :id="process.title">
             <!-- class="section section-dark"  -->
             <!-- <div v-if="process.priority != 1"><hr></div> -->
@@ -219,7 +220,8 @@
 
     <!-- KEYNOTES ===================================== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock blockId="keynote" :zoneName="keynote" @zoneVisibility="keynote = $event">
+    <!-- <MaskableBlock blockId="keynote" :zoneName="keynote" @zoneVisibility="keynote = $event"> -->
+    <MaskableBlock blockId="keynote" @zoneVisibility="keynote = $event">
       <section class="section section-dark" id="keynotes">
         <div class="section-background">
           <div class="section-background-image parallax" data-stellar-ratio="0.4">
@@ -251,7 +253,8 @@
     </MaskableBlock>
 
     <!-- The Planning ================================= -->
-    <MaskableBlock blockId="planning" :zoneName="planning" @zoneVisibility="planning = $event">
+    <!-- <MaskableBlock blockId="planning" :zoneName="planning" @zoneVisibility="planning = $event"> -->
+    <MaskableBlock blockId="planning" @zoneVisibility="planning = $event">
       <section class="section" id="planning">
         <div class="container">
           <div class="row">
@@ -307,7 +310,8 @@
     </MaskableBlock>
 
     <!-- RESULT ====================================== -->
-    <MaskableBlock blockId="result" :zoneName="result" @zoneVisibility="result = $event">
+    <!-- <MaskableBlock blockId="result" :zoneName="result" @zoneVisibility="result = $event"> -->
+    <MaskableBlock blockId="result" @zoneVisibility="result = $event">
       <section id="winners" class="section">
         <div class="container">
           <h2 class="section-heading text-center">Les résultats</h2>
@@ -333,7 +337,8 @@
     </MaskableBlock>
 
     <!-- POST HACKATHON ============================== -->
-    <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event">
+    <!-- <MaskableBlock blockId="process" :zoneName="process" @zoneVisibility="process = $event"> -->
+    <MaskableBlock blockId="process" @zoneVisibility="process = $event">
       <section v-for="process in processes" :key="process.id">
         <div v-if="process.title === 'Post Hackathon'" :style="{ backgroundColor: process.backgroundColor }" class="section" :id="process.title">
           <div class="container">
@@ -443,7 +448,8 @@
 
     <!-- PARTNER ===================================== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock blockId="partner" :zoneName="partner" @zoneVisibility="partner = $event">
+    <!-- <MaskableBlock blockId="partner" :zoneName="partner" @zoneVisibility="partner = $event"> -->
+    <MaskableBlock blockId="partner" @zoneVisibility="partner = $event">
       <section class="section-dark section" id="sponsors" style="padding-bottom: 30px; padding-top: 30px;">
         <div class="container">
           <h2 class="section-heading text-center hidden">
@@ -457,7 +463,8 @@
 
     <!-- FAQ ========================================= -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
-    <MaskableBlock blockId="question" :zoneName="question" @zoneVisibility="question = $event">
+    <!-- <MaskableBlock blockId="question" :zoneName="question" @zoneVisibility="question = $event"> -->
+    <MaskableBlock blockId="question" @zoneVisibility="question = $event">
       <section class="faq-section section" id="faq">
         <div class="container">
           <h2 class="section-heading text-center">Foire aux questions</h2>
@@ -466,7 +473,7 @@
               <div class="faq-item">
                 <span class="faq-item-icon fa fa-question-circle"></span>
                 <h4 class="faq-item-heading">{{ question.title }}</h4>
-                <div class="faq-item-text">{{ question.description }}</div>
+                <div class="faq-item-text">{{ question.answer }}</div>
               </div>
             </div>
           </div>
@@ -619,7 +626,7 @@ export default {
       ],
       announces: [
         {
-          title: "titre"
+          content: "content"
         }
       ],
       processes: [
@@ -635,8 +642,8 @@ export default {
       ],
       questions: [
         {
-          title: "titre",
-          description: "description"
+          title: "title",
+          answer: "answer"
         }
       ],
       partnerCategories: [
@@ -731,7 +738,7 @@ export default {
       }
     },
     pdfUrl: function(filePDF) {
-      if (filePDF.file[0].url != null) {
+      if (filePDF.file[0].url !== null) {
         return api.getMediaRoot() + filePDF.file[0].url;
       }
     }
@@ -774,7 +781,7 @@ export default {
   }
 }
 
-.title {
+.content {
   position: absolute;
   top: 15%;
   left: 50%;
@@ -790,16 +797,16 @@ export default {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.titleWithoutImg {
+.contentWithoutImg {
   margin-top: 70px;
 }
 
 @media screen and (max-width: 576px) {
-  .title {
+  .content {
     font-size: 1.2em;
     top: 30%;
   }
-  .titleWithoutImg {
+  .contentWithoutImg {
     font-size: 1.2em;
     margin-top: 57px;
   }
