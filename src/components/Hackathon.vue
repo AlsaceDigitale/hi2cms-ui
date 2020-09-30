@@ -73,6 +73,7 @@
 
 <script>
 export default {
-  name: "About"
+  // name: "About"
+  name: "Hackathon"
 };
 </script>
