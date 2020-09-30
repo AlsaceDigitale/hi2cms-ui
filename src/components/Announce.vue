@@ -9,10 +9,10 @@
       <div v-if="announce.enabled">
         <div v-if="announce.thumbnail !== null" style="position: relative">
           <img :alt="announce.title" :src="thumbUrl(announce)" width="100%" />
-          <h3 class="title">{{ announce.title }}</h3>
+          <h3 class="content">{{ announce.content }}</h3>
         </div>
         <div v-else>
-          <h3 class="titleWithoutImg">{{ announce.title }}</h3>
+          <h3 class="contentWithoutImg">{{ announce.content }}</h3>
         </div>
 
         <!-- <img :alt="announce.title" :src="thumbUrl(announce)" :title="announce.title" width="100%"/> -->
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
+.content {
   position: absolute;
   top: 15%;
   left: 50%;
@@ -94,16 +94,16 @@ export default {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.titleWithoutImg {
+.contentWithoutImg {
   margin-top: 70px;
 }
 
 @media screen and (max-width: 576px) {
-  .title {
+  .content {
     font-size: 1.2em;
     top: 30%;
   }
-  .titleWithoutImg {
+  .contentWithoutImg {
     font-size: 1.2em;
     margin-top: 57px;
   }
