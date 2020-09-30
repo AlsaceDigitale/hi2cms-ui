@@ -37,7 +37,7 @@ export default {
   name: "MaskableBlock",
   props: {
     blockId: String,
-    zoneName: Boolean
+    // zoneName: Boolean
   },
   data: function() {
     return {
