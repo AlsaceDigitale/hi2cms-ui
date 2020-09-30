@@ -32,30 +32,6 @@
       >
         <!-- NAVIGATION LINKS -->
         <ul class="nav navbar-nav" id="header-nav">
-          <!-- <li v-if="checkMaskableBlock('process')"><a href="#process">Process</a></li>
-            <li v-if="checkMaskableBlock('process')"><a href="#Hackathon">Hackathon</a></li>
-            <li v-if="checkMaskableBlock('keynote')"><a href="#keynotes">Keynotes</a></li>
-            <li><a href="#planning">Planning</a></li>
-            <li><a href="#winners">Résultats</a></li>
-            <li v-if="checkMaskableBlock('partner')"><a href="#sponsors">Partenaires</a></li>
-            <li v-if="checkMaskableBlock('question')"><a href="#faq">FAQ</a></li> -->
-
-          <!-- <li v-if="getVisibleBlocks('process') === true"><a href="#process">Process</a></li>
-            <li v-if="getVisibleBlocks('process') === true"><a href="#Hackathon">Hackathon</a></li>
-            <li v-if="getVisibleBlocks('keynote') === true"><a href="#keynotes">Keynotes</a></li>
-            <li v-if="getVisibleBlocks('planning') === true"><a href="#planning">Planning</a></li>
-            <li v-if="getVisibleBlocks('result') === true"><a href="#winners">Résultats</a></li>
-            <li v-if="getVisibleBlocks('partner') === true"><a href="#sponsors">Partenaires</a></li>
-            <li v-if="getVisibleBlocks('question') === true"><a href="#faq">FAQ</a></li> -->
-
-          <!-- <li v-if="process"><a href="#process">Process</a></li>
-            <li v-if="process"><a href="#Hackathon">Hackathon</a></li>
-            <li v-if="keynote"><a href="#keynotes">Keynotes</a></li>
-            <li v-if="planning"><a href="#planning">Planning</a></li>
-            <li v-if="result"><a href="#winners">Résultats</a></li>
-            <li v-if="partner"><a href="#sponsors">Partenaires</a></li>
-            <li v-if="question"><a href="#faq">FAQ</a></li> -->
-
           <li v-if="process"><a href="#process">Process</a></li>
           <li v-if="process"><a href="#Hackathon">Hackathon</a></li>
           <li v-if="keynote"><a href="#keynotes">Keynotes</a></li>
@@ -63,7 +39,6 @@
           <li v-if="result"><a href="#winners">Résultats</a></li>
           <li v-if="partner"><a href="#sponsors">Partenaires</a></li>
           <li v-if="question"><a href="#faq">FAQ</a></li>
-
           <!-- HEADER ACTION BUTTON -->
           <li class="header-action-button">
             <a
@@ -121,64 +96,6 @@ export default {
     partner: Boolean,
     question: Boolean
   }
-  //   data: function() {
-  //     return {
-  //       process: true,
-  //       keynote: true,
-  //       planning: true,
-  //       result: true,
-  //       partner: true,
-  //       question: true
-  //     };
-  //   },
-  //   methods: {
-  //     checkMaskableBlock: function(itemName) {
-  //       let zone = this.maskableblocks.find(element => element.name === itemName);
-  //       if (zone !== undefined) {
-  //         if (zone.visible === true) {
-  //           return true;
-  //         } else {
-  //           return false;
-  //         }
-  //       }
-  //     }
-
-  // getVisibleBlocks: function(name) {
-  //   let zone = this.maskableblocks.filter(
-  //     element => element.visible === true
-  //   );
-  //   if (zone.find(element => element.name === name)) {
-  //     this.name = true;
-  //   } else {
-  //     this.name = false;
-  //   }
-  // if (zone !== undefined) {
-  //     if(zone.visible === true) {
-  //         return true;
-  //     } else {
-  //         return false;
-  //     }
-  // }
-  //     }
-  //   }
-  //     checkMaskableBlock : function (itemName) {
-  //         this.maskableblocks.forEach(function(element) {
-  //             if (element.name === itemName && element.visible === true) {
-  //                 console.log("item name is " + itemName);
-  //                 console.log(element);
-  //                 return true;
-  //             } else {
-  //                 return false;
-  //             }
-  //             // else if(element.name === itemName && element.visible === false) {
-  //             //      console.log("element undefined");
-  //             //     //  console.log("item name is " + itemName);
-  //             //     //  console.log(element);
-  //             //     return false;
-  //             // }
-  //         });
-  //     }
-  // }
 };
 </script>
 
