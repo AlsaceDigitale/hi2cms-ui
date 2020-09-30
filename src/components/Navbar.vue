@@ -42,7 +42,7 @@
           <!-- HEADER ACTION BUTTON -->
           <li class="header-action-button">
             <a
-              class="btn btn-danger"
+              class="btn btn-danger btn"
               href="https://702421b7.sibforms.com/serve/MUIEANLOWfsvFG5gr0BWwHFpNFThKBSLjDs6sOxCjuolXRQ1nQpsFXEO78_kW5mISoM52VelpLr68WFAP_cg5sy5tVUx5LMTzKfFw5FCU3gRFN1j9vgLuUS-fxIytNbtc7x9QucVx_EjxYmyRIFlx5R1uDn1lBEH4j4cHF7pAdnQdvdGj_Cl3PLDsnQumLOUP-S7WRPoG1mhZAhK"
               target="_blank"
               >Suivre
@@ -100,6 +100,11 @@ export default {
 </script>
 
 <style scoped>
+
+.btn:hover, .btn:focus {
+  background-color: #d9534f;
+}
+
 .header-section.floating .navbar-nav .language-choice {
   padding-top: 0;
 }
