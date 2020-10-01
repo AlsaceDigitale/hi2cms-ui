@@ -1,7 +1,7 @@
 import axios from "axios";
 
 let baseURL = process.env["VUE_APP_API_ROOT"] || "http://localhost:1337/";
-let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "http://localhost:1337";
+let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "";
 
 // let baseURL = process.env["VUE_APP_API_ROOT"] || "http://192.168.0.24:1337/";
 // let mediaURL = process.env["VUE_APP_MEDIA_ROOT"] || "";
