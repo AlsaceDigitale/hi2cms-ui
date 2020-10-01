@@ -9,6 +9,8 @@ To change backend api url (by default its http://localhost:1337)
 
 ```
 VUE_APP_API_ROOT="http://YOUR_SERVER_IP:YOUR_PORT" yarn serve
+VUE_APP_API_ROOT=https://hi2cms-dev.osc-fr1.scalingo.io/ yarn serve
+
 ```
 
 ### Compiles and minifies for production
