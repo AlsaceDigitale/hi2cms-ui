@@ -260,7 +260,7 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
               <!-- <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a> -->
-              <a class="btn btn-lg btn-primary" :href="pdfUrl(planningPDF)" target="_blank">Consulter le planning complet</a>
+              <!-- <a class="btn btn-lg btn-primary" :href="pdfUrl(planningPDF)" target="_blank">Consulter le planning complet</a> -->
             </div>
             <div class="col-md-6">
               <h3 class="closing-shout">
