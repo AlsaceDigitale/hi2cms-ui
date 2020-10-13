@@ -538,6 +538,9 @@
           <a href="http://2018.hackingindustry.camp/" target="_blank">2018</a> -
           <a href="http://2019.hackingindustry.camp/" target="_blank">2019</a>
         </div>
+        <div class="footer-version">
+          {{ apiVersion }}
+        </div>
       </div>
 
       <!-- Modal -->
@@ -667,7 +670,8 @@ export default {
       planning: true,
       result: true,
       partner: true,
-      question: true
+      question: true,
+      apiVersion: "1.0"
     };
   },
   mounted: function () {
@@ -707,6 +711,9 @@ export default {
     // api.getKeySteps().then(resp => {
     //   this.keysteps = resp.data;
     // });
+    api.getApiVersion().then(resp=> {
+      this.apiVersion=resp.data
+    });
   },
   methods: {
     shuffle: function (arr) {
