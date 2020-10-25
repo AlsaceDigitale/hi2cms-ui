@@ -56,7 +56,10 @@
               >Les défis</a
             >
           </li>
-          <li>
+
+          <!-- ****************************************************************** -->
+          <!-- Comment this item until preparing the pages for English and Germany -->
+          <!-- <li>
             <a
               aria-expanded="false"
               class="dropdown-toggle external language-choice"
@@ -68,9 +71,9 @@
                 style="font-size: 20px; vertical-align: -2px;"
               ></i
               >&nbsp; FR <span class="caret"></span
-            ></a>
+            ></a> -->
             <!-- Icon of the languages -->
-            <ul class="dropdown-menu dropdown-language" role="menu">
+            <!-- <ul class="dropdown-menu dropdown-language" role="menu">
               <li>
                 <a href="/en/">EN</a>
               </li>
@@ -78,7 +81,9 @@
                 <a href="/de/">DE</a>
               </li>
             </ul>
-          </li>
+          </li> -->
+          <!-- ****************************************************************** -->
+
         </ul>
       </nav>
     </div>
