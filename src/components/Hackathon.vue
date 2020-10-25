@@ -3,7 +3,7 @@
     <!-- <h2 class="section-heading text-center">A Propos</h2> -->
     <h1 class="section-heading text-center">HACKATHON</h1>
     <h1 class="section-heading text-center">
-      Du 5/6/7 février 2021 à TPS. Strasbourg
+      Du 5/6/7 février 2021 à Télécom Physique de Strasbourg
     </h1>
 
     <div class="about-row row">
@@ -28,6 +28,7 @@
           espace-temps où les communautés se croisent et fourmillent d’idées
           avec pour objectif l’innovation !
         </p>
+        <p></p>
         <ul class="icon-list">
           <li>
             <span class="icon-list-icon" data-animation="bounceIn"

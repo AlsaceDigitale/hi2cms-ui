@@ -273,7 +273,7 @@
             </div>
             <div class="col-md-6">
               <h3 class="closing-shout">
-                Inscris ? Consultez dès à présent la liste des défis, vous
+                Inscrit ? Consultez dès à présent la liste des défis, vous
                 pouvez également proposer le vôtre !
               </h3>
               <div class="closing-buttons" data-animation="tada">
