@@ -3,7 +3,8 @@
     <!-- <h2 class="section-heading text-center">A Propos</h2> -->
     <h1 class="section-heading text-center">HACKATHON</h1>
     <h1 class="section-heading text-center">
-      Du 5/6/7 février 2021 à Télécom Physique de Strasbourg
+      <!-- Du 5/6/7 février 2021 à Télécom Physique de Strasbourg -->
+      {{ process.stepIntroduction }}
     </h1>
 
     <div class="about-row row">
@@ -75,6 +76,9 @@
 <script>
 export default {
   // name: "About"
-  name: "Hackathon"
+  name: "Hackathon",
+  props: {
+    process: Object
+  },
 };
 </script>

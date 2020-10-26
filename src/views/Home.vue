@@ -113,7 +113,7 @@
             </div>
           </div>
           <div v-else-if="process.title === 'Hackathon'" :id="process.title" class="hero-section hero-layout-classic hero-layout-video-and-features-cta section section-dark" style="padding: 100px 0;background-image: url('images/backgrounds/motif2018.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-            <Hackathon />
+            <Hackathon :process="process" />
           </div>
 
           <!-- ***** Show the Modal when user clicked the buttons of the description **** *** ** * -->
