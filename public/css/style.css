@@ -2568,6 +2568,10 @@ iframe {
     opacity: 0.5;
 }
 
+.footer-version {
+    opacity: 0.2;
+}
+
 /**
  * ========================================
  * RESPONSIVE SLIDES

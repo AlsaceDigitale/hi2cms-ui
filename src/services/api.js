@@ -53,6 +53,9 @@ export default {
   // getKeySteps: function () {
   //     return HTTP.get("/keysteps");
   // },
+  getApiVersion: function() {
+    return HTTP.get("/version");
+  },
   getMediaRoot: function() {
     return mediaURL;
   }
