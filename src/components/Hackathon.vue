@@ -14,7 +14,7 @@
       </div>
       <!-- DESCRIPTION TEXT -->
       <div class="about-text col-md-6">
-        <p class="lead" style="font-size: 18px;padding-top: 0;">
+        <p class="lead" style="font-size: 18px; padding-top: 0; text-align: justify;">
           Le
           <strong
             >Hacking Industry Camp par
@@ -75,7 +75,6 @@
 
 <script>
 export default {
-  // name: "About"
   name: "Hackathon",
   props: {
     process: Object
