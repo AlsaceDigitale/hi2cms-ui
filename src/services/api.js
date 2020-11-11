@@ -50,6 +50,9 @@ export default {
   getPlanningPDF: function() {
     return HTTP.get("/pdfplanning");
   },
+  getSpecialZone: function() {
+    return HTTP.get("/specialzone");
+  },
   // getKeySteps: function () {
   //     return HTTP.get("/keysteps");
   // },
