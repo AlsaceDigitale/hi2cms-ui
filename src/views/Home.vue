@@ -446,6 +446,13 @@
       </div>
     </section>
 
+    <!-- Special Zone "Chair IA" ===================== -->
+    <MaskableBlock blockId="specialzone" @zoneVisibility="specialzone = $event">
+      <section class="headline-section section" id="specialZone">
+        <SpecialZone :specialZone="specialZone" />
+      </section>
+    </MaskableBlock>
+
     <!-- PARTNER ===================================== -->
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
     <!-- <MaskableBlock blockId="partner" :zoneName="partner" @zoneVisibility="partner = $event"> -->
@@ -583,6 +590,7 @@ import PartnerCategory from "@/components/PartnerCategory.vue";
 import Navbar from "@/components/Navbar.vue";
 import Map from "@/components/Map.vue";
 import MaskableBlock from "@/components/MaskableBlock.vue";
+import SpecialZone from "@/components/SpecialZone.vue";
 
 // import KeyStep from "@/components/KeyStep.vue";
 
@@ -598,7 +606,8 @@ export default {
     PartnerCategory,
     Navbar,
     Map,
-    MaskableBlock
+    MaskableBlock,
+    SpecialZone
     // KeyStep
   },
   data: function () {
@@ -671,7 +680,10 @@ export default {
       result: true,
       partner: true,
       question: true,
-      apiVersion: "1.0"
+      apiVersion: "1.0",
+      specialZone: {
+        title: "Special Zone"
+      }
     };
   },
   mounted: function () {
@@ -707,6 +719,9 @@ export default {
     });
     api.getPlanningPDF().then(resp => {
       this.planningPDF = resp.data;
+    });
+    api.getSpecialZone().then(resp => {
+      this.specialZone = resp.data;
     });
     // api.getKeySteps().then(resp => {
     //   this.keysteps = resp.data;
