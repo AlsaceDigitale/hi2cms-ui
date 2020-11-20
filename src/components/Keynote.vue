@@ -52,7 +52,7 @@
           }}</span>
         </div>
         <!-- if set, show the link of the conference of passed event -->
-        <div class="centered">
+        <div v-if="keynote.conferenceLink !== null" class="centered">
           <a class="btn btn-primary buttonSize" :href="keynote.conferenceLink" target="_blank">Revoir</a>
         </div>
       </div>
