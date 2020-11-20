@@ -51,8 +51,12 @@
             keynote.startTime | frStartTimeFormat2
           }}</span>
         </div>
+        <!-- if set, show the link of the conference of passed event -->
+        <div class="centered">
+          <a class="btn btn-primary buttonSize" :href="keynote.conferenceLink" target="_blank">Revoir</a>
+        </div>
       </div>
-
+      
       <!-- The title & the speakers name -->
       <div class="text-left title">
         <h4 style="line-height: 1.3em; color: #bbbbbb">
@@ -355,8 +359,7 @@ export default {
   position: absolute;
   top: 0%;
   right: 0%;
-  padding-left: 2px;
-  padding-right: 2px;
+  padding: 0 2px;
   background-color: rgba(80, 83, 90, 0.808);
 }
 .date {
@@ -367,10 +370,7 @@ export default {
   background-color: #f7a611;
   line-height: 1.2;
   font-size: 0.8em;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 3px 10px;
   font-weight: bold;
 }
 .dateGray {
@@ -381,17 +381,19 @@ export default {
   background-color: #444444;
   line-height: 1.2;
   font-size: 0.8em;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 3px 10px;
   font-weight: bold;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .title {
   margin-top: 20px;
   height: 5em;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 0 5px;
 }
 /* .description {
     position: absolute;
@@ -417,15 +419,11 @@ export default {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.buttonClose {
-  margin-bottom: 10px;
+/* .buttonClose {
   float: right;
-  margin-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
+  margin: 0 10px 10px 0;
+  padding: 0 6px;
+} */
 .imageGray {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
