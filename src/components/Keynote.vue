@@ -53,7 +53,7 @@
         </div>
         <!-- if set, show the link of the conference of passed event -->
         <div v-if="keynote.conferenceLink" class="centered">
-          <a class="btn btn-primary buttonSize" :href="keynote.conferenceLink" target="_blank">Revoir</a>
+          <a class="btn btn-warning buttonSize buttonColor" :href="keynote.conferenceLink" target="_blank">Revoir</a>
         </div>
       </div>
       
@@ -418,6 +418,12 @@ export default {
 .buttonSize {
   padding-top: 4px;
   padding-bottom: 4px;
+}
+.buttonColor {
+  color: #222222;
+  background-color: #f7a611;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 /* .buttonClose {
   float: right;
