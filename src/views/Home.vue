@@ -268,7 +268,7 @@
                 inscrire !
               </h3>
               <div class="closing-buttons" data-animation="tada">
-                <a class="btn btn-lg btn-primary" href="https://www.eventbrite.fr/e/billets-hacking-industry-camp-2019-70600870103" target="_blank">J'y vais !</a>
+                <a class="btn btn-lg btn-primary" href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-1" target="_blank">J'y vais !</a>
               </div>
             </div>
             <div class="col-md-6">
