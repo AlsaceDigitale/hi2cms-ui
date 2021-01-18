@@ -76,7 +76,14 @@
 
           <h4 style="margin-top: 30px; margin-bottom: 30px">
             UN PARCOURS DE 6 MOIS <br />
-            ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION
+            ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION <br />
+            <a
+              class="btn btn-lg btn-primary"
+              href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-1"
+              style="margin-top: 20px;"
+              target="_blank"
+              >Je participe !</a
+            >
           </h4>
         </div>
         <!-- </section> -->
@@ -259,7 +266,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 closing-buttons" data-animation="tada">
-              <!-- <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a> -->
+              <a class="btn btn-lg btn-primary" href="planning.pdf" target="_blank">Consulter le planning complet</a>
               <!-- <a class="btn btn-lg btn-primary" :href="pdfUrl(planningPDF)" target="_blank">Consulter le planning complet</a> -->
             </div>
             <div class="col-md-6">
