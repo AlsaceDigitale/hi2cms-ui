@@ -15,6 +15,16 @@
         <div class="hero-features row" style="margin-top: 45px;">
           <div class="hero-features-left col-md-6">
             <div class="video-embed">
+              <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/LEhzAEE0LLg" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-embed">
               <iframe
                 width="560"
                 height="315"
@@ -45,9 +55,9 @@
               </span>
             </p>
           </div>
-          <div class="hero-features-right col-md-6" data-animation="fadeIn">
+          <div class="hero-features-right col-md-6 divMargin" data-animation="fadeIn">
             <ul class="icon-list">
-              <li>
+              <li class="liMargin">
                 <span class="icon-list-icon" data-animation="bounceIn"
                   ><i class="far fa-hand-point-up"></i
                 ></span>
@@ -95,8 +105,24 @@
 
 <script>
 export default {
-  // name: "Hackathon"
   name: "About"
-
 };
 </script>
+
+<style scoped>
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  .divMargin {
+    margin-top: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .liMargin {
+    margin-bottom: 20px;
+  }
+  .divMargin {
+    margin-top: 160px;
+  }
+}
+
+</style>
