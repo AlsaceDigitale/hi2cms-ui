@@ -1,7 +1,7 @@
 <template>
   <div class="document" id="document">
     <!-- HEADER ======================================= -->
-    <Navbar :process="process" :keynote="keynote" :planning="planning" :result="result" :partner="partner" :question="question" />
+    <Navbar :process="process" :keynote="keynote" :planning="planning" :result="result" :partner="partner" :question="question" :specialzone="specialzone" />
     <!-- <MaskableBlock :maskableblocks="maskableblocks"> -->
     <!-- <Navbar :maskableblocks="maskableblocks" /> -->
     <!-- </MaskableBlock> -->
@@ -168,7 +168,7 @@
         <div class="hiw-row row">
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item">
-              <img alt="le pitch" class="hiw-item-picture" src="images/contents/how1.jpg" />
+              <img alt="le pitch" class="hiw-item-picture" src="images/contents/photo1.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">1</span>
                 <h4 class="hiw-item-title">Le Pitch</h4>
@@ -210,7 +210,7 @@
           <!-- HOW IT WORKS - ITEM 4 -->
           <div class="col-sm-6 col-md-3" data-animation="fadeIn">
             <div class="hiw-item even">
-              <img alt="présentation finale" class="hiw-item-picture" src="images/contents/how4.jpg" />
+              <img alt="présentation finale" class="hiw-item-picture" src="images/contents/photo4.jpg" />
               <div class="hiw-item-text">
                 <span class="hiw-item-icon">4</span>
                 <h4 class="hiw-item-title">La présentation finale</h4>
@@ -687,6 +687,7 @@ export default {
       result: true,
       partner: true,
       question: true,
+      specialzone: true,
       apiVersion: "1.0",
       specialZone: {
         title: "Special Zone"
