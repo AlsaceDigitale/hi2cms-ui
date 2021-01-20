@@ -79,11 +79,17 @@
             ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION <br />
             <a
               class="btn btn-lg btn-primary"
+              href="#Hackathon"
+              style="margin-top: 20px;"
+              >Je découvre</a
+            >
+            <!-- <a
+              class="btn btn-lg btn-primary"
               href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-1"
               style="margin-top: 20px;"
               target="_blank"
               >Je participe !</a
-            >
+            > -->
           </h4>
         </div>
         <!-- </section> -->
