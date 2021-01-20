@@ -113,9 +113,17 @@
               <p v-if="process.stepDescription" style="margin-bottom: 10px; margin-top: 20px">
                 {{ process.stepDescription }}
               </p>
-              <p v-if="process.stepContact">
+              <p v-if="process.stepContact" style="margin-bottom: 20px">
                 <a href="mailto:contact@alsacedigitale.org" style="cursor: pointer">{{ process.stepContact }}</a>
               </p>
+              <div v-if="process.stepLink" class="col-md-12 text-center">
+                <a
+                  class="btn btn-md btn-primary"
+                  :href="process.stepLink"
+                  target="_blank"
+                  >{{ process.stepDescriptionLink }}</a
+                >
+              </div>
               <!-- <p v-if="process.stepContact">{{ process.stepContact }}  <a style="cursor: pointer" data-toggle="modal" :data-target="'#' + process.priority"> Contactez-nous</a></p> -->
             </div>
           </div>
