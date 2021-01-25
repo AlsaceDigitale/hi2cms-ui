@@ -78,10 +78,10 @@
             UN PARCOURS DE 6 MOIS <br />
             ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION <br />
             <a
-              class="btn btn-lg btn-primary"
+              class="btn btn-lg btn-warning buttonColor"
               href="#Hackathon"
               style="margin-top: 20px;"
-              >Je découvre</a
+              >Aller à la section Hackathon</a
             >
             <!-- <a
               class="btn btn-lg btn-primary"
@@ -854,5 +854,12 @@ export default {
     font-size: 1.2em;
     margin-top: 57px;
   }
+}
+
+.buttonColor {
+  color: #222222;
+  background-color: #f7a611;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 </style>
