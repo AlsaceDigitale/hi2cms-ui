@@ -5,7 +5,7 @@
     <div style="border-top: solid 1px; margin-bottom: 20px"></div>
 
     <!-- ____ if only the video & the title is set ____ -->
-    <div v-if="keynote.conferenceLink && keynote.title && !keynote.startTime && !keynote.endTime && !keynote.thumbnail">
+    <div v-if="keynote.conferenceLink && keynote.title && !keynote.startTime && !keynote.endTime && !keynote.thumbnail" style="margin-bottom: 70px">
       <!-- Show the video from Youtube -->
       <div class="video-embed" style="margin-top: 0">
         <iframe 
@@ -23,7 +23,7 @@
           {{ keynote.title }}
         </h4>
       </div>
-      <div style="margin-bottom: 70px"></div>
+      <!-- <div style="margin-bottom: 70px"></div> -->
     </div>
 
     <!-- ____ else, showing the normal format of keynote ou keystep ____ -->
