@@ -23,7 +23,7 @@
           {{ keynote.title }}
         </h4>
       </div>
-      <div style="margin-bottom: 60px"></div>
+      <div style="margin-bottom: 70px"></div>
     </div>
 
     <!-- ____ else, showing the normal format of keynote ou keystep ____ -->
