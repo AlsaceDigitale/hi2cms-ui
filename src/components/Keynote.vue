@@ -5,7 +5,7 @@
     <div style="border-top: solid 1px; margin-bottom: 20px"></div>
 
     <!-- ____ if only the video & the title is set ____ -->
-    <div v-if="keynote.conferenceLink && keynote.title && !keynote.startTime && !keynote.endTime && !keynote.thumbnail" style="margin-bottom: 80px">
+    <div v-if="keynote.conferenceLink && keynote.title && !keynote.startTime && !keynote.endTime && !keynote.thumbnail" style="margin-bottom: 90px">
       <!-- Show the video from Youtube -->
       <div class="video-embed" style="margin-top: 0">
         <iframe 
@@ -84,7 +84,7 @@
         
         <!-- The title & the speakers name -->
         <div class="text-left title">
-          <h4 style="line-height: 1.3em; color: #bbbbbb">
+          <h4 style="line-height: 1.3em; color: dimgray">
             {{ keynote.title }}<br /><span
               ><em class="small">{{ keynote.speaker }}</em></span
             >
