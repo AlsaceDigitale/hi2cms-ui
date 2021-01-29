@@ -6,7 +6,7 @@
           <div class="col-md-10 col-md-offset-1">
             <h1 class="section-heading text-center">A Propos</h1>
             <!-- <h4>{{ about.description}}<a href="planning2021.pdf" target="_blank">{{ about.linkTitle }}</a></h4> -->
-            <h4>Vous souhaitez connaître le déroulé du Hacking Industry e-Camp 2021 ? <a href="planning.pdf" target="_blank">C'est par ici !</a></h4>
+            <h4>Vous souhaitez connaître le déroulé du Hacking Industry e-Camp 2021 ? <a href="Planning-HIC-2021.pdf" target="_blank">C'est par ici !</a></h4>
             
             <!-- <h1 class="section-heading text-center">HACKATHON</h1>
                  <h1 class="section-heading text-center">Du 5/6/7 février 2021 à TPS. Strasbourg </h1> -->
