@@ -25,7 +25,7 @@
             <div class="col-md-10 col-md-offset-1">
               <a
                 class="btn btn-lg btn-warning buttonColor"
-                href="http://localhost:8080/#/live"
+                href="https://hi2cms-dev.netlify.app/#/live"
                 style="margin-top: 20px; margin-right: 20px"
                 >Pour suivre le hacking industry camp en direct</a
               >
