@@ -23,6 +23,18 @@
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
+              <a
+                class="btn btn-lg btn-warning buttonColor"
+                href="http://localhost:8080/#/live"
+                style="margin-top: 20px; margin-right: 20px"
+                >Pour suivre le hacking industry camp en direct</a
+              >
+              <a
+                class="btn btn-lg btn-warning buttonColor"
+                href="#"
+                style="margin-top: 20px; margin-left: 20px"
+                >Pour des informations supplémentaires</a
+              >
               <!-- <h3 class="text-center">
                 L'édition 2019 est déjà terminée, mais ce n'est que le début pour
                 vos projets !
