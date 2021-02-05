@@ -37,7 +37,8 @@
                   <a
                     class="btn btn-lg btn-warning buttonColor"
                     style="margin-top:20px"
-                    href="blog.hackingindustry.camp"
+                    href="https://blog.hackingindustry.camp"
+                    target="_blank"
                     >Plus d'infos</a
                   >
                 </div>
