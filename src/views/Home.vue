@@ -24,19 +24,21 @@
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
               <div class="row">
-                <div class="col-sm-4 col-sm-offset-2">
+                <div class="col-sm-3 col-sm-offset-3">
                   <a
                     class="btn btn-lg btn-warning buttonColor"
-                    href="https://hi2cms-dev.netlify.app/#/live"
-                    style="margin-top: 20px"
-                    >Accéder au direct</a
+                    href="https://www.twitch.tv/alsacedigitale"
+                    target="_blank"
+                    style="margin-top: 20px; padding-left: 27px; padding-right: 27px"
+                    >Voir le live</a
                   >
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                   <a
                     class="btn btn-lg btn-warning buttonColor"
-                    style="margin-top:20px; padding-left: 48px; padding-right: 48px"
-                    href="blog.hackingindustry.camp"
+                    style="margin-top:20px"
+                    href="https://blog.hackingindustry.camp"
+                    target="_blank"
                     >Plus d'infos</a
                   >
                 </div>
