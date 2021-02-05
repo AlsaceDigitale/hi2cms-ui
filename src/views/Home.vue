@@ -23,18 +23,26 @@
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <a
-                class="btn btn-lg btn-warning buttonColor"
-                href="https://hi2cms-dev.netlify.app/#/live"
-                style="margin-top: 20px; margin-right: 20px"
-                >Pour suivre le hacking industry camp en direct</a
-              >
-              <a
-                class="btn btn-lg btn-warning buttonColor"
-                href="#"
-                style="margin-top: 20px; margin-left: 20px"
-                >Pour des informations supplémentaires</a
-              >
+              <div class="row">
+                <div class="col-sm-4 col-sm-offset-2">
+                  <a
+                    class="btn btn-lg btn-warning buttonColor"
+                    href="https://hi2cms-dev.netlify.app/#/live"
+                    style="margin-top: 20px"
+                    >Accéder au direct</a
+                  >
+                </div>
+                <div class="col-sm-4">
+                  <a
+                    class="btn btn-lg btn-warning buttonColor"
+                    style="margin-top:20px; padding-left: 48px; padding-right: 48px"
+                    href="blog.hackingindustry.camp"
+                    >Plus d'infos</a
+                  >
+                </div>
+              </div>
+              
+              
               <!-- <h3 class="text-center">
                 L'édition 2019 est déjà terminée, mais ce n'est que le début pour
                 vos projets !
