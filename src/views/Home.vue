@@ -37,7 +37,7 @@
                   <a
                     class="btn btn-lg btn-warning buttonColor"
                     style="margin-top:20px"
-                    href="https://blog.hackingindustry.camp"
+                    href="https://alsacedigitale.medium.com/en-direct-live-du-hacking-industry-camp-2021-50349e6ae911"
                     target="_blank"
                     >Plus d'infos</a
                   >
