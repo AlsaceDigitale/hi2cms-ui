@@ -23,7 +23,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-sm-3 col-sm-offset-3">
                   <a
                     class="btn btn-lg btn-warning buttonColor"
@@ -42,7 +42,7 @@
                     >Plus d'infos</a
                   >
                 </div>
-              </div>
+              </div> -->
               
               
               <!-- <h3 class="text-center">
@@ -101,8 +101,16 @@
             ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION <br />
             <a
               class="btn btn-lg btn-warning buttonColor"
+              style="margin-top:20px"
+              href="Infographie-HIC-2021.pdf"
+              target="_blank"
+              >Bilan du Hackathon</a
+            >
+            <br />
+            <a
+              class="btn btn-lg btn-warning buttonColor"
               href="#Hackathon"
-              style="margin-top: 20px;"
+              style="margin-top: 20px"
               >Aller à la section Hackathon</a
             >
             <!-- <a
