@@ -99,14 +99,14 @@
           <h4 style="margin-top: 30px; margin-bottom: 30px">
             UN PARCOURS DE 6 MOIS <br />
             ET UN HACKATHON DE 54H POUR STIMULER L'INNOVATION <br />
-            <a
+            <!-- <a
               class="btn btn-lg btn-warning buttonColor"
               style="margin-top:20px"
               href="Infographie-HIC-2021.pdf"
               target="_blank"
               >Bilan du Hackathon</a
             >
-            <br />
+            <br /> -->
             <a
               class="btn btn-lg btn-warning buttonColor"
               href="#Hackathon"
