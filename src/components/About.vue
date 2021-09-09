@@ -6,7 +6,8 @@
           <div class="col-md-10 col-md-offset-1">
             <h1 class="section-heading text-center">A Propos</h1>
             <!-- <h4>{{ about.description}}<a href="planning2021.pdf" target="_blank">{{ about.linkTitle }}</a></h4> -->
-            <h4>Vous souhaitez connaître le déroulé du Hacking Industry e-Camp 2021 ? <a href="Planning-HIC-2021.pdf" target="_blank">C'est par ici !</a></h4>
+            <!-- <h4>Vous souhaitez connaître le déroulé du Hacking Industry e-Camp 2021 ? <a href="Planning-HIC-2021.pdf" target="_blank">C'est par ici !</a></h4> -->
+            <h4>Vous souhaitez connaître le déroulé du Hacking Industry Camp 2021 ? <a href="" target="_blank">C'est par ici !</a></h4>
             
             <!-- <h1 class="section-heading text-center">HACKATHON</h1>
                  <h1 class="section-heading text-center">Du 5/6/7 février 2021 à TPS. Strasbourg </h1> -->
@@ -36,7 +37,7 @@
               <!-- videos\Reportage_HIC_Version_ES_DEF.m4v -->
             </div>
             <p class="lead">
-              <strong>54h pour stimuler l'innovation</strong> <br />La cinquième
+              <strong>54h pour stimuler l'innovation</strong> <br />La sixième
               édition du Hackathon dédié à l'Industrie en Alsace <br />54h pour
               innover et inventer l'industrie 4.0
               <span
@@ -45,13 +46,16 @@
                 <strong
                   >Jetez un coup d'oeil aux éditions précédentes :
                 </strong>
+                <a href="" target="_blank"
+                  >2020</a
+                >
+                -
                 <a href="http://2019.hackingindustry.camp/" target="_blank"
                   >2019</a
                 >
-                -
-                <a href="http://2018.hackingindustry.camp/" target="_blank"
+                <!-- <a href="http://2018.hackingindustry.camp/" target="_blank"
                   >2018</a
-                >
+                > -->
               </span>
             </p>
           </div>
