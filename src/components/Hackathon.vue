@@ -28,12 +28,11 @@
           des prototypes d’applications, d’objets connectés… C’est un
           espace-temps où les communautés se croisent et fourmillent d’idées
           avec pour objectif l’innovation ! <br /> <br />
-          Pour cette 5ième édition, le <strong>Hacking Industry Camp</strong> 
-          se réinvente en proposant un e-camp entièrement en ligne, (weekend du 5 au 7 février 2021) 
-          suivi d’une semaine supplémentaire (du 8 au 12 février 2021), 
-          permettant à 5 équipes sélectionnées à l’issue du weekend d’affiner leur projet et 
-          éventuellement de passer à une étape de prototypage grâce à un accès 
-          à des Fablabs et à un coaching renforcé.
+          {{ process.stepDescription }}
+          <!-- Pour cette 6ème édition, le <strong>Hacking Industry Camp</strong>
+          débarque à Télécom Physique pour vous proposer un format hybride, 
+          mélangeant les points positifs des éditions en physique et de notre 
+          édition spéciale en ligne. -->
         </p>
         <p></p>
         <ul class="icon-list">
