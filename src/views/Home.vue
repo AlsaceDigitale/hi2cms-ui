@@ -331,7 +331,7 @@
               </h3>
               <div class="closing-buttons" data-animation="tada">
                 <!-- <a class="btn btn-lg btn-primary" href="https://hic2021.sparkboard.com/" target="_blank">Voir les défis / Proposer un défi</a> -->
-                <a class="btn btn-lg btn-primary" href="" target="_blank">Voir les défis / Proposer un défi</a>
+                <a class="btn btn-lg btn-primary" href="https://hic2021-2.sparkboard.com/" target="_blank">Voir les défis / Proposer un défi</a>
               </div>
             </div>
           </div>
@@ -589,15 +589,16 @@
         </div> -->
         <div class="footer-copyright">
           <a href="https://digitalescapegame.osc-fr1.scalingo.io/mentions-legales/" target="_blank">Mentions Légales</a>
-          &copy; 2020
+          &copy; 2021
           <a href="http://www.alsacedigitale.org/" target="_blank" title="Alsace Digitale">Alsace Digitale</a>
           •
-          <strong>Précédentes éditions :</strong>
+          <strong>Précédentes éditions : </strong>
           <a href="http://2015.hackingindustry.camp/" target="_blank">2015</a> -
           <a href="http://2016.hackingindustry.camp/" target="_blank">2016</a> -
           <a href="http://2017.hackingindustry.camp/" target="_blank">2017</a> -
           <a href="http://2018.hackingindustry.camp/" target="_blank">2018</a> -
-          <a href="http://2019.hackingindustry.camp/" target="_blank">2019</a>
+          <a href="http://2019.hackingindustry.camp/" target="_blank">2019</a> -
+          <a href="#" target="_blank">2020</a>
         </div>
         <div class="footer-version">
           {{ apiVersion }}
