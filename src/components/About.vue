@@ -94,7 +94,7 @@
             <div class="hero-buttons col-md-12 text-center">
               <a
                 class="btn btn-lg btn-primary"
-                href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-1"
+                href="#"
                 style="margin-top: 20px;"
                 target="_blank"
                 >Je participe au hackathon !</a
