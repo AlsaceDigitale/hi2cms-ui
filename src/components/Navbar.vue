@@ -52,7 +52,7 @@
           <li class="header-action-button">
             <a
               class="btn btn-primary"
-              href=""
+              href="https://hic2021-2.sparkboard.com/"
               target="_blank"
               >Les défis</a
             >
