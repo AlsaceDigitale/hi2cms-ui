@@ -19,7 +19,8 @@
 
     <!-- ANNOUNCES ==================================== -->
     <MaskableBlock blockId="announce">
-      <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh">
+      <!-- <section class="headline-section section-accent section" style="padding: 0; margin-top: 2.5vh"> -->
+      <section class="headline-section section" style="padding: 0; margin-top: 2.5vh">
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
