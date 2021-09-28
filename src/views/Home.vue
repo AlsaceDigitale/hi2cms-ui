@@ -322,7 +322,7 @@
               </h3>
               <div class="closing-buttons" data-animation="tada">
                 <!-- <a class="btn btn-lg btn-primary" href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-1" target="_blank">J'y vais !</a> -->
-                <a class="btn btn-lg btn-primary" href="" target="_blank">J'y vais !</a>
+                <a class="btn btn-lg btn-primary" href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2021" target="_blank">J'y vais !</a>
               </div>
             </div>
             <div class="col-md-6">
