@@ -43,7 +43,7 @@
           <!-- HEADER ACTION BUTTON -->
           <li class="header-action-button">
             <a
-              class="btn btn-danger btn"
+              class="btn btn-danger redColor"
               href="https://702421b7.sibforms.com/serve/MUIEANLOWfsvFG5gr0BWwHFpNFThKBSLjDs6sOxCjuolXRQ1nQpsFXEO78_kW5mISoM52VelpLr68WFAP_cg5sy5tVUx5LMTzKfFw5FCU3gRFN1j9vgLuUS-fxIytNbtc7x9QucVx_EjxYmyRIFlx5R1uDn1lBEH4j4cHF7pAdnQdvdGj_Cl3PLDsnQumLOUP-S7WRPoG1mhZAhK"
               target="_blank"
               >Suivre
@@ -55,6 +55,14 @@
               href="https://hic2021-2.sparkboard.com/"
               target="_blank"
               >Les défis</a
+            >
+          </li>
+          <li class="header-action-button">
+            <a
+              class="btn btn-warning yellowColor"
+              href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2021"
+              target="_blank"
+              >S'inscrire</a
             >
           </li>
 
@@ -108,12 +116,22 @@ export default {
 
 <style scoped>
 
-.btn:hover, .btn:focus {
+.redColor:hover, .redColor:focus {
   background-color: #d9534f;
 }
 
 .header-section.floating .navbar-nav .language-choice {
   padding-top: 0;
+}
+
+.yellowColor {
+  color: #222222;
+  background-color: #f7a611;
+  font-size: 0.8em;
+}
+
+.yellowColor:hover, .yellowColor:focus {
+  background-color: #f7a611;
 }
 
 @media screen and (max-width: 991px) {
