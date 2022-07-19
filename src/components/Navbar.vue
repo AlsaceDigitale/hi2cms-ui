@@ -52,19 +52,20 @@
           <li class="header-action-button">
             <a
               class="btn btn-primary"
-              href="https://hic2021-2.sparkboard.com/"
+              href="https://hic2022.sparkboard.com/"
               target="_blank"
               >Les défis</a
             >
           </li>
-          <li class="header-action-button">
+          <!-- Active or deactivate the button of register -->
+          <!-- <li class="header-action-button">
             <a
               class="btn btn-warning yellowColor"
               href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2021"
               target="_blank"
               >S'inscrire</a
             >
-          </li>
+          </li> -->
 
           <!-- ****************************************************************** -->
           <!-- Comment this item until preparing the pages for English and Germany -->
