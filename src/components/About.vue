@@ -7,7 +7,7 @@
             <h1 class="section-heading text-center">A Propos</h1>
             <!-- <h4>{{ about.description}}<a href="planning2021.pdf" target="_blank">{{ about.linkTitle }}</a></h4> -->
             <!-- <h4>Vous souhaitez connaître le déroulé du Hacking Industry e-Camp 2021 ? <a href="Planning-HIC-2021.pdf" target="_blank">C'est par ici !</a></h4> -->
-            <h4>Vous souhaitez connaître le déroulé du Hacking Industry Camp 2021 ? <a href="" target="_blank">C'est par ici !</a></h4>
+            <h4>Vous souhaitez connaître le déroulé du Hacking Industry Camp 2022 ? <a href="HIC2022-Planning-Previsionnel.pdf" target="_blank">C'est par ici !</a></h4>
             
             <!-- <h1 class="section-heading text-center">HACKATHON</h1>
                  <h1 class="section-heading text-center">Du 5/6/7 février 2021 à TPS. Strasbourg </h1> -->
@@ -37,7 +37,7 @@
               <!-- videos\Reportage_HIC_Version_ES_DEF.m4v -->
             </div>
             <p class="lead">
-              <strong>54h pour stimuler l'innovation</strong> <br />La sixième
+              <strong>54h pour stimuler l'innovation</strong> <br />La septième
               édition du Hackathon dédié à l'Industrie en Alsace <br />54h pour
               innover et inventer l'industrie 4.0
               <span
@@ -91,7 +91,8 @@
                 </p>
               </li>
             </ul>
-            <div class="hero-buttons col-md-12 text-center">
+            <!-- Deactive the button of "je participe au hackathon" -->
+            <!-- <div class="hero-buttons col-md-12 text-center">
               <a
                 class="btn btn-lg btn-primary"
                 href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2021"
@@ -99,7 +100,7 @@
                 target="_blank"
                 >Je participe au hackathon !</a
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
