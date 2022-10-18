@@ -49,6 +49,15 @@
               >Suivre
             </a>
           </li>
+          <!-- Active or deactivate the button of register -->
+          <li class="header-action-button">
+            <a
+              class="btn btn-warning yellowColor"
+              href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2022"
+              target="_blank"
+              >Inscription</a
+            >
+          </li>
           <li class="header-action-button">
             <a
               class="btn btn-primary"
@@ -57,15 +66,6 @@
               >Les défis</a
             >
           </li>
-          <!-- Active or deactivate the button of register -->
-          <!-- <li class="header-action-button">
-            <a
-              class="btn btn-warning yellowColor"
-              href="https://www.helloasso.com/associations/alsace-digitale/evenements/hacking-industry-camp-2021"
-              target="_blank"
-              >S'inscrire</a
-            >
-          </li> -->
 
           <!-- ****************************************************************** -->
           <!-- Comment this item until preparing the pages for English and Germany -->
