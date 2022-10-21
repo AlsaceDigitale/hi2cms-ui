@@ -17,7 +17,7 @@
     "express": "^4.18.2",
     "hooper": "^0.3.4",
     "leaflet": "^1.6.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "twitch": "^4.4.8",
     "vue": "^2.6.11",
     "vue-horizontal-list": "^1.0.7",
