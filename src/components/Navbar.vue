@@ -39,6 +39,7 @@
           <li v-if="result"><a href="#winners">Résultats</a></li>
           <li v-if="specialzone"><a href="#specialZone">Chaire IA</a></li>
           <li v-if="partner"><a href="#sponsors">Partenaires</a></li>
+          <li v-if="question"><a href="#previousEditions">Éditions précédentes</a></li>
           <li v-if="question"><a href="#faq">FAQ</a></li>
           <!-- HEADER ACTION BUTTON -->
           <li class="header-action-button">
