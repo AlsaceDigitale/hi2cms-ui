@@ -1,8 +1,6 @@
 <template>
   <div class="sponsors-row" data-animation="bounceIn">
-    <h4>
-      Éditions Précédentes
-    </h4>
+    <h2 class="section-heading text-center">Éditions Précédentes</h2>
     <br />
     <div v-for="link in linkData" :key="link.name">
       <a :href="link.link" target="_blank">
