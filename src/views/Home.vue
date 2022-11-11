@@ -589,7 +589,7 @@
         </div> -->
         <div class="footer-copyright">
           <a href="https://digitalescapegame.osc-fr1.scalingo.io/mentions-legales/" target="_blank">Mentions Légales</a>
-          &copy; 2021
+          &copy; 2022
           <a href="http://www.alsacedigitale.org/" target="_blank" title="Alsace Digitale">Alsace Digitale</a>
           •
           <strong>Précédentes éditions : </strong>
