@@ -13,17 +13,13 @@
 <script>
 import api from "@/services/api.js";
 
+import previousEditions from './previousEditions.json';
+
 export default {
   name: "PreviousEditions",
   data: function () {
     return {
-      "linkData": [
-        { "name": "2021", "text":"🚀 Défis 2021", "link": "https://hic2021-2.sparkboard.com"},
-        { "name": "2020", "text":"🚀 Défis 2020  (édition de janvier 2021)", "link": "https://hic2021.sparkboard.com"},
-        { "name": "2019", "text":"🚀 Défis 2019", "link": "https://hic2019.sparkboard.com"},
-        { "name": "2018", "text":"🚀 Défis 2019", "link": "https://hic2018.sparkboard.com"},
-        { "name": "2017", "text":"🚀 Défis 2019", "link": "https://hic2017.sparkboard.com"}
-    ],
+      "linkData": previousEditions,
       "partnerCategory": true
     }
   },
