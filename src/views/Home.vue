@@ -542,6 +542,18 @@
       </section>
     </MaskableBlock>
 
+    <!-- PREVIOUS EDITIONS ========================================= -->
+    <MaskableBlock blockId="question" @zoneVisibility="question = $event">
+      <section class="section-dark section" id="previousEditions" style="padding-bottom: 30px; padding-top: 30px;">
+        <div class="container">
+          <h2 class="section-heading text-center hidden">
+            Éditions précédentes
+          </h2>
+          <previous-editions/>
+        </div>
+      </section>
+    </MaskableBlock>
+
     <!-- CONTACT + MAPS ============================== -->
     <section class="contact-maps-section" id="contact-maps">
       <div class="container">
@@ -646,6 +658,7 @@ import Navbar from "@/components/Navbar.vue";
 import Map from "@/components/Map.vue";
 import MaskableBlock from "@/components/MaskableBlock.vue";
 import SpecialZone from "@/components/SpecialZone.vue";
+import PreviousEditions from "@/components/PreviousEditions.vue";
 
 // import KeyStep from "@/components/KeyStep.vue";
 
@@ -662,7 +675,8 @@ export default {
     Navbar,
     Map,
     MaskableBlock,
-    SpecialZone
+    SpecialZone,
+    PreviousEditions
     // KeyStep
   },
   data: function () {
